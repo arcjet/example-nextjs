@@ -5,6 +5,10 @@
   </picture>
 </a>
 
+[![Deploy with Vercel][vercel_button]][vercel_deploy]
+&nbsp; &nbsp;
+[![Deploy to Netlify][netlify_button]][netlify_deploy]
+
 # Arcjet example app
 
 [Arcjet](https://arcjet.com) helps developers protect their apps in just a few
@@ -32,12 +36,6 @@ features. It is deployed at
 - [Sensitive info](https://example.arcjet.com/sensitive-info) protects against
   clients sending you sensitive information such as PII that you do not wish to
   handle.
-
-## Deploy it now
-
-[![Deploy with Vercel][vercel_button]][vercel_deploy]
-&nbsp; &nbsp;
-[![Deploy to Netlify][netlify_button]][netlify_deploy]
 
 ## Run locally
 
