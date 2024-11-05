@@ -1,5 +1,4 @@
 import WhatNext from "@/components/compositions/WhatNext";
-import useSiteKey from "@/components/effects/useSiteKey";
 import Divider from "@/components/elements/Divider";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
@@ -7,7 +6,7 @@ import Link from "next/link";
 import styles from "@/components/elements/PageShared.module.scss";
 
 export default function IndexPage() {
-  const { siteKey } = useSiteKey();
+  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
   return (
     <section className={styles.Content}>

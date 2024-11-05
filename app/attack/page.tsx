@@ -1,6 +1,5 @@
 import VisitDashboard from "@/components/compositions/VisitDashboard";
 import WhatNext from "@/components/compositions/WhatNext";
-import useSiteKey from "@/components/effects/useSiteKey";
 import Divider from "@/components/elements/Divider";
 import styles from "@/components/elements/PageShared.module.scss";
 import type { Metadata } from "next";
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function IndexPage() {
-  const { siteKey } = useSiteKey();
+  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
   const headersList = await headers();
   const hostname = headersList.get('host') || 'example.arcjet.com'; // Default to hosted example if undefined
 

@@ -1,7 +1,6 @@
 import { EmailForm } from "@/components/EmailForm";
 import VisitDashboard from "@/components/compositions/VisitDashboard";
 import WhatNext from "@/components/compositions/WhatNext";
-import useSiteKey from "@/components/effects/useSiteKey";
 import Divider from "@/components/elements/Divider";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function IndexPage() {
-  const { siteKey } = useSiteKey();
+  const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
   return (
     <section className={styles.Content}>
