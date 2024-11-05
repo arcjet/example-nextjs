@@ -3,6 +3,7 @@ import WhatNext from "@/components/compositions/WhatNext";
 import useSiteKey from "@/components/effects/useSiteKey";
 import Divider from "@/components/elements/Divider";
 import type { Metadata } from "next";
+import { headers } from 'next/headers';
 import Link from "next/link";
 
 import styles from "@/components/elements/PageShared.module.scss";
@@ -12,8 +13,10 @@ export const metadata: Metadata = {
   description: "An example of Arcjet's bot protection for Next.js.",
 };
 
-export default function IndexPage() {
+export default async function IndexPage() {
   const { siteKey } = useSiteKey();
+  const headersList = await headers();
+  const hostname = headersList.get('host') || 'example.arcjet.com'; // Default to hosted example if undefined
 
   return (
     <section className={styles.Content}>
@@ -41,7 +44,7 @@ export default function IndexPage() {
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
-        <pre className="p-4">curl -v https://example.arcjet.com/bots/test</pre>
+        <pre className="p-4">curl -v https://{hostname}/bots/test</pre>
         <p className="text-secondary-foreground">
           Your IP will be blocked for 60 seconds.
         </p>
