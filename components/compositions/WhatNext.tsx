@@ -52,7 +52,7 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
                 <span className="text-secondary-foreground">Get in touch</span>
 
                 <Link
-                  href="https://discord.gg/TPra6jqZDC"
+                  href="https://arcjet.com/discord"
                   target="_blank"
                   rel="noreferrer"
                   className="font-bold decoration-1 underline-offset-2 hover:underline"
@@ -86,7 +86,7 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
                 </Link>
                 <span className="text-muted-foreground">/</span>
                 <Link
-                  href="https://discord.gg/TPra6jqZDC"
+                  href="https://arcjet.com/discord"
                   target="_blank"
                   rel="noreferrer"
                   className="font-bold decoration-1 underline-offset-2 hover:underline"
