@@ -4,6 +4,7 @@ import useSiteKey from "@/components/effects/useSiteKey";
 import Divider from "@/components/elements/Divider";
 import styles from "@/components/elements/PageShared.module.scss";
 import type { Metadata } from "next";
+import { headers } from 'next/headers';
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,8 +13,10 @@ export const metadata: Metadata = {
     "An example of Arcjet's attack protection for Next.js. Protect Next.js against SQL injection, cross-site scripting, and other attacks.",
 };
 
-export default function IndexPage() {
+export default async function IndexPage() {
   const { siteKey } = useSiteKey();
+  const headersList = await headers();
+  const hostname = headersList.get('host') || 'example.arcjet.com'; // Default to hosted example if undefined
 
   return (
     <section className={styles.Content}>
@@ -55,7 +58,7 @@ export default function IndexPage() {
         </p>
         <pre className="p-4">
           curl -v -H &quot;x-arcjet-suspicious: true&quot;
-          https://example.arcjet.com/attack/test
+          https://{hostname}/attack/test
         </pre>
         <p className="max-w-[700px] text-secondary-foreground">
           After the 5th request, your IP will be blocked for 15 minutes.
