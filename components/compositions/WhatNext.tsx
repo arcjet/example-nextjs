@@ -72,27 +72,31 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
                   Sign up for Arcjet
                 </Link>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <span className="text-secondary-foreground">
                   Want to know more?
                 </span>
 
-                <Link
-                  href="https://docs.arcjet.com"
-                  target="_blank"
-                  className="font-bold decoration-1 underline-offset-2 hover:underline"
-                >
-                  Arcjet docs
-                </Link>
-                <span className="text-muted-foreground">/</span>
-                <Link
-                  href="https://arcjet.com/discord"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold decoration-1 underline-offset-2 hover:underline"
-                >
-                  Join our Discord
-                </Link>
+                <span className="inline-block">
+                  <Link
+                    href="https://docs.arcjet.com"
+                    target="_blank"
+                    className="font-bold decoration-1 underline-offset-2 hover:underline"
+                  >
+                    Arcjet docs
+                  </Link>
+                  <span className="text-muted-foreground">
+                    &nbsp;&nbsp;/&nbsp;&nbsp;
+                  </span>
+                  <Link
+                    href="https://arcjet.com/discord"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-bold decoration-1 underline-offset-2 hover:underline"
+                  >
+                    Join our Discord
+                  </Link>
+                </span>
               </div>
             </>
           )}
