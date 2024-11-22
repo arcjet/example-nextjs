@@ -11,7 +11,8 @@ export function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      size="icon"
+      size="defaultIcon"
+      flavour="iconOnly"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <ThemeSystem classes={["size-4"]} />
