@@ -29,9 +29,9 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@arcjet/decorate": "^1.0.0-alpha.34",
-    "@arcjet/ip": "^1.0.0-alpha.34",
-    "@arcjet/next": "^1.0.0-alpha.34",
+    "@arcjet/decorate": "^1.0.0-beta.1",
+    "@arcjet/ip": "^1.0.0-beta.1",
+    "@arcjet/next": "^1.0.0-beta.1",
     "@hookform/resolvers": "^3.10.0",
     "@nosecone/next": "^1.0.0-beta.1",
     "@radix-ui/react-label": "^2.1.1",
