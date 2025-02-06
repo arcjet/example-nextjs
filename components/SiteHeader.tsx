@@ -14,7 +14,7 @@ import { NavItem } from "@/types/nav";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 
 import styles from "./SiteHeader.module.scss";
 
@@ -35,17 +35,17 @@ export function SiteHeader() {
       const selected = pathname.indexOf(item.key) >= 0;
 
       return item.key == "home" ? (
-        <></>
+        <Fragment key={"nav-item-" + index}></Fragment>
       ) : item.href && selected ? (
         <span
-          key={index}
+          key={"nav-item-" + index}
           className={cn("text-md flex h-8 items-center font-bold text-primary")}
         >
           {item.title}
         </span>
       ) : (
         <Link
-          key={index}
+          key={"nav-item-" + index}
           href={item.href || ""}
           className={buttonVariants({
             size: "defaultTight",
