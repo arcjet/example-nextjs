@@ -1,5 +1,6 @@
 "use client";
 
+import { formSchema } from "@/app/signup/schema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -11,7 +12,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { formSchema } from "@/app/signup/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -21,6 +21,7 @@ export function EmailForm() {
   // Allows us to set an error message on the form.
   const {
     setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
   // Used to navigate to the welcome page after a successful form submission.
@@ -37,6 +38,8 @@ export function EmailForm() {
   // Define a submit handler called when the form is submitted. It sends the
   // form data to an API endpoint and redirects to the welcome page on success.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    clearErrors();
+
     // values is guaranteed to be of the correct type by the Zod schema.
     const result = await fetch("/signup/test", {
       body: JSON.stringify(values),
@@ -63,17 +66,21 @@ export function EmailForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
         <FormField
           control={form.control}
           name="email" // The name of the field in the form schema.
-          render={({ field }) => (
+          render={({ field: { onChange, ...field } }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
                   type="email"
                   placeholder="totoro@example.com"
+                  onChange={(e) => {
+                    clearErrors();
+                    onChange(e);
+                  }}
                   {...field}
                 />
               </FormControl>

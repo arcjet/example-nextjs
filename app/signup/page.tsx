@@ -52,7 +52,7 @@ export default function IndexPage() {
       <div className={styles.Section}>
         <h2 className="text-xl font-bold">Try it</h2>
 
-        <div className="flex gap-4">
+        <div className="flex w-[320px] gap-4">
           <EmailForm />
         </div>
 
