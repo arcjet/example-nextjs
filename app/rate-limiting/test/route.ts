@@ -46,8 +46,9 @@ export async function POST(req: NextRequest) {
   console.log("Session: ", session);
 
   // Next.js 15 doesn't provide the IP address in the request object so we use
-  // the Arcjet utility package to parse the headers and find it
-  const userIp = ip(req);
+  // the Arcjet utility package to parse the headers and find it. If we're
+  // running in development mode, we'll use a local IP address.
+  const userIp = process.env.NODE_ENV === "development" ? "127.0.0.1" : ip(req);
 
   // Use the user ID if the user is logged in, otherwise use the IP address
   const fingerprint = session?.user?.id ?? userIp;
