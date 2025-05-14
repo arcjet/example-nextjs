@@ -1,5 +1,10 @@
 // This is Auth.js 5, the successor to NextAuth 4
-import arcjet, { detectBot, shield, slidingWindow } from "@/lib/arcjet";
+import arcjet, {
+  ARCJET_ENV,
+  detectBot,
+  shield,
+  slidingWindow,
+} from "@/lib/arcjet";
 import { handlers } from "@/lib/auth";
 import ip from "@arcjet/ip";
 import { NextRequest, NextResponse } from "next/server";
@@ -32,7 +37,7 @@ const ajProtectedPOST = async (req: NextRequest) => {
   // Next.js 15 doesn't provide the IP address in the request object so we use
   // the Arcjet utility package to parse the headers and find it. If we're
   // running in development mode, we'll use a local IP address.
-  const userIp = process.env.NODE_ENV === "development" ? "127.0.0.1" : ip(req);
+  const userIp = ARCJET_ENV === "development" ? "127.0.0.1" : ip(req);
   const decision = await aj.protect(req, { fingerprint: userIp });
 
   if (decision.isDenied()) {

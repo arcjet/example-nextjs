@@ -1,4 +1,4 @@
-import arcjet, { fixedWindow, shield } from "@/lib/arcjet";
+import arcjet, { ARCJET_ENV, fixedWindow, shield } from "@/lib/arcjet";
 import { auth } from "@/lib/auth";
 import { setRateLimitHeaders } from "@arcjet/decorate";
 import ip from "@arcjet/ip";
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
   // Next.js 15 doesn't provide the IP address in the request object so we use
   // the Arcjet utility package to parse the headers and find it. If we're
   // running in development mode, we'll use a local IP address.
-  const userIp = process.env.NODE_ENV === "development" ? "127.0.0.1" : ip(req);
+  const userIp = ARCJET_ENV === "development" ? "127.0.0.1" : ip(req);
 
   // Use the user ID if the user is logged in, otherwise use the IP address
   const fingerprint = session?.user?.id ?? userIp;

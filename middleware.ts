@@ -1,4 +1,5 @@
 import * as nosecone from "@nosecone/next";
+import { ARCJET_ENV } from "./lib/arcjet";
 
 const noseconeConfig: nosecone.NoseconeOptions = {
   ...nosecone.defaults,
@@ -28,7 +29,7 @@ const noseconeConfig: nosecone.NoseconeOptions = {
       ],
       // We only set this in production because the server may be started
       // without HTTPS
-      upgradeInsecureRequests: process.env.NODE_ENV === "production",
+      upgradeInsecureRequests: ARCJET_ENV !== "development",
     },
   },
   crossOriginEmbedderPolicy: {
