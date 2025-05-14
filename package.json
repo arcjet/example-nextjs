@@ -26,7 +26,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test:open": "playwright test --ui-host=0.0.0.0",
+    "test:run": "playwright test"
   },
   "dependencies": {
     "@arcjet/decorate": "^1.0.0-beta.5",
@@ -52,6 +54,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
