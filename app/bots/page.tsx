@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
 
-import styles from "@/components/elements/PageShared.module.scss";
+import sharedStyles from "@/components/elements/PageShared.module.scss";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Bot protection example",
@@ -21,12 +22,10 @@ export default async function IndexPage() {
     : "https";
 
   return (
-    <section className={styles.Content}>
-      <div className={styles.Section}>
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Arcjet bot protection example
-        </h1>
-        <p className="max-w-[700px] text-lg">
+    <section className={sharedStyles.Content}>
+      <div className={sharedStyles.Section}>
+        <h1 className={styles.title}>Arcjet bot protection example</h1>
+        <p className={styles.description}>
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
@@ -40,19 +39,19 @@ export default async function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">Try it</h2>
-        <p className="text-secondary-foreground">
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>Try it</h2>
+        <p className={styles.secondaryText}>
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
-        <pre className="p-4">
+        <pre className={styles.codeExample}>
           curl -v {protocol}://{hostname}/bots/test
         </pre>
-        <p className="text-secondary-foreground">
+        <p className={styles.secondaryText}>
           Your IP will be blocked for 60 seconds.
         </p>
-        <p className="max-w-[700px] text-secondary-foreground">
+        <p className={styles.explanation}>
           Bot protection can also be installed in middleware to protect your
           entire site.
         </p>
@@ -62,9 +61,9 @@ export default async function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">See the code</h2>
-        <p className="text-secondary-foreground">
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>See the code</h2>
+        <p className={styles.secondaryText}>
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/bots/test/route.ts"

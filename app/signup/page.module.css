@@ -1,0 +1,47 @@
+.title {
+  @apply text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl;
+}
+
+.description {
+  @apply max-w-[700px] text-lg;
+}
+
+.featureList {
+  @apply ms-8 max-w-[700px] list-outside list-disc text-secondary-foreground;
+}
+
+.featureItem {
+  @apply text-lg;
+}
+
+.featureItemWithSpace {
+  @apply pt-4 text-lg;
+}
+
+.sectionHeading {
+  @apply text-xl font-bold;
+}
+
+.formContainer {
+  @apply flex w-[320px] gap-4;
+}
+
+.secondaryText {
+  @apply text-secondary-foreground;
+}
+
+.testList {
+  @apply ms-8 list-outside list-disc;
+}
+
+.testItem {
+  @apply text-muted-foreground;
+}
+
+.testItemWithSpace {
+  @apply pt-2 text-muted-foreground;
+}
+
+.testCode {
+  @apply text-secondary-foreground;
+}

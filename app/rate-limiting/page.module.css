@@ -1,0 +1,27 @@
+.title {
+  @apply text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl;
+}
+
+.description {
+  @apply max-w-[700px] text-lg;
+}
+
+.sectionHeading {
+  @apply text-xl font-bold;
+}
+
+.secondaryText {
+  @apply text-secondary-foreground;
+}
+
+.authSuccess {
+  @apply text-green-500;
+}
+
+.authFailure {
+  @apply text-red-400;
+}
+
+.explanation {
+  @apply max-w-[700px] text-secondary-foreground;
+}

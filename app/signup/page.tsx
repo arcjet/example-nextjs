@@ -5,7 +5,8 @@ import Divider from "@/components/elements/Divider";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import styles from "@/components/elements/PageShared.module.scss";
+import sharedStyles from "@/components/elements/PageShared.module.scss";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Signup form protection example",
@@ -17,12 +18,10 @@ export default function IndexPage() {
   const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
   return (
-    <section className={styles.Content}>
-      <div className={styles.Section}>
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Arcjet signup form protection
-        </h1>
-        <p className="max-w-[700px] text-lg">
+    <section className={sharedStyles.Content}>
+      <div className={sharedStyles.Section}>
+        <h1 className={styles.title}>Arcjet signup form protection</h1>
+        <p className={styles.description}>
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/signup-protection/concepts"
@@ -32,16 +31,16 @@ export default function IndexPage() {
           </Link>{" "}
           which includes:
         </p>
-        <ul className="ms-8 max-w-[700px] list-outside list-disc text-secondary-foreground">
-          <li className="text-lg">
+        <ul className={styles.featureList}>
+          <li className={styles.featureItem}>
             Arcjet server-side email verification configured to block disposable
             providers and ensure that the domain has a valid MX record.
           </li>
-          <li className="pt-4 text-lg">
+          <li className={styles.featureItemWithSpace}>
             Rate limiting set to 5 requests over a 2 minute sliding window - a
             reasonable limit for a signup form, but easily configurable.
           </li>
-          <li className="pt-4 text-lg">
+          <li className={styles.featureItemWithSpace}>
             Bot protection to stop automated clients from submitting the form.
           </li>
         </ul>
@@ -49,44 +48,40 @@ export default function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">Try it</h2>
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>Try it</h2>
 
-        <div className="flex w-[320px] gap-4">
+        <div className={styles.formContainer}>
           <EmailForm />
         </div>
 
         {siteKey && <VisitDashboard />}
 
-        <h2 className="text-xl font-bold">Test emails</h2>
-        <p className="text-secondary-foreground">
+        <h2 className={styles.sectionHeading}>Test emails</h2>
+        <p className={styles.secondaryText}>
           Try these emails to see how it works:
         </p>
-        <ul className="ms-8 list-outside list-disc">
-          <li className="text-muted-foreground">
-            <code className="text-secondary-foreground">invalid.@arcjet</code>{" "}
-            – is an invalid email address.
+        <ul className={styles.testList}>
+          <li className={styles.testItem}>
+            <code className={styles.testCode}>invalid.@arcjet</code> – is an
+            invalid email address.
           </li>
-          <li className="pt-2 text-muted-foreground">
-            <code className="text-secondary-foreground">
-              test@0zc7eznv3rsiswlohu.tk
-            </code>{" "}
-            – is from a disposable email provider.
+          <li className={styles.testItemWithSpace}>
+            <code className={styles.testCode}>test@0zc7eznv3rsiswlohu.tk</code>{" "}
+            – is from a disposable email provider.
           </li>
-          <li className="pt-2 text-muted-foreground">
-            <code className="text-secondary-foreground">
-              nonexistent@arcjet.ai
-            </code>{" "}
-            – is a valid email address & domain, but has no MX records.
+          <li className={styles.testItemWithSpace}>
+            <code className={styles.testCode}>nonexistent@arcjet.ai</code> – is
+            a valid email address & domain, but has no MX records.
           </li>
         </ul>
       </div>
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">See the code</h2>
-        <p className="text-secondary-foreground">
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>See the code</h2>
+        <p className={styles.secondaryText}>
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/signup/test/route.ts"

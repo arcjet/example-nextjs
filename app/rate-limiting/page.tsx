@@ -7,7 +7,8 @@ import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import styles from "@/components/elements/PageShared.module.scss";
+import sharedStyles from "@/components/elements/PageShared.module.scss";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Rate limiting example",
@@ -18,12 +19,10 @@ export default async function IndexPage() {
   const session = await auth();
 
   return (
-    <section className={styles.Content}>
-      <div className={styles.Section}>
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Arcjet rate limiting example
-        </h1>
-        <p className="max-w-[700px] text-lg">
+    <section className={sharedStyles.Content}>
+      <div className={sharedStyles.Section}>
+        <h1 className={styles.title}>Arcjet rate limiting example</h1>
+        <p className={styles.description}>
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
@@ -37,33 +36,33 @@ export default async function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">Try it</h2>
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>Try it</h2>
         <RLForm />
 
         {session?.user ? (
           <>
-            <p className="text-green-500">
+            <p className={styles.authSuccess}>
               You are authenticated as {session.user?.email}
-              <span className="text-secondary-foreground">
+              <span className={styles.secondaryText}>
                 {" "}
-                – the limit is set to 5 requests every 60 seconds.
+                – the limit is set to 5 requests every 60 seconds.
               </span>
             </p>
           </>
         ) : (
           <>
-            <p className="text-red-400">
+            <p className={styles.authFailure}>
               You are not authenticated
-              <span className="text-secondary-foreground">
+              <span className={styles.secondaryText}>
                 {" "}
-                – the limit is set to 2 requests every 60 seconds.
+                – the limit is set to 2 requests every 60 seconds.
               </span>
             </p>
           </>
         )}
 
-        <p className="max-w-[700px] text-secondary-foreground">
+        <p className={styles.explanation}>
           Rate limits can be{" "}
           <Link
             href="https://docs.arcjet.com/reference/nextjs#ad-hoc-rules"
@@ -79,9 +78,9 @@ export default async function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">See the code</h2>
-        <p className="text-secondary-foreground">
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>See the code</h2>
+        <p className={styles.secondaryText}>
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/rate-limiting/test/route.ts"

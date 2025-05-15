@@ -2,7 +2,8 @@ import { SupportForm } from "@/components/SuppportForm";
 import VisitDashboard from "@/components/compositions/VisitDashboard";
 import WhatNext from "@/components/compositions/WhatNext";
 import Divider from "@/components/elements/Divider";
-import styles from "@/components/elements/PageShared.module.scss";
+import sharedStyles from "@/components/elements/PageShared.module.scss";
+import styles from "./page.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -16,12 +17,12 @@ export default function IndexPage() {
   const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
 
   return (
-    <section className={styles.Content}>
-      <div className={styles.Section}>
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+    <section className={sharedStyles.Content}>
+      <div className={sharedStyles.Section}>
+        <h1 className={styles.title}>
           Arcjet sensitive info detection example
         </h1>
-        <p className="max-w-[700px] text-lg">
+        <p className={styles.description}>
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/sensitive-info/concepts"
@@ -33,7 +34,7 @@ export default function IndexPage() {
           configured to detect other types of sensitive information and custom
           patterns.
         </p>
-        <p className="max-w-[700px] text-secondary-foreground">
+        <p className={styles.subdescription}>
           The request is analyzed entirely on your server so no sensitive
           information is sent to Arcjet.
         </p>
@@ -41,10 +42,10 @@ export default function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">Try it</h2>
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>Try it</h2>
 
-        <div className="flex gap-4">
+        <div className={styles.formContainer}>
           <SupportForm />
         </div>
 
@@ -53,9 +54,9 @@ export default function IndexPage() {
 
       <Divider />
 
-      <div className={styles.Section}>
-        <h2 className="text-xl font-bold">See the code</h2>
-        <p className="text-secondary-foreground">
+      <div className={sharedStyles.Section}>
+        <h2 className={styles.sectionHeading}>See the code</h2>
+        <p className={styles.secondaryText}>
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/sensitive-info/test/route.ts"

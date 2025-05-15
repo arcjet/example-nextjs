@@ -1,0 +1,31 @@
+.title {
+  @apply text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl;
+}
+
+.description {
+  @apply max-w-[700px] text-lg;
+}
+
+.subtitle {
+  @apply max-w-[700px] text-secondary-foreground;
+}
+
+.sectionHeading {
+  @apply text-xl font-bold;
+}
+
+.buttonContainer {
+  @apply flex flex-wrap gap-4;
+}
+
+.featureSection {
+  @apply flex max-w-[980px] flex-col items-start gap-6;
+}
+
+.exampleSection {
+  @apply flex max-w-[980px] flex-col items-start gap-6 pt-8;
+}
+
+.deploySection {
+  @apply flex flex-col gap-4;
+}
