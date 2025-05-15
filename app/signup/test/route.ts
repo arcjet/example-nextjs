@@ -1,5 +1,5 @@
 import { formSchema } from "@/app/signup/schema";
-import arcjet, { protectSignup, shield } from "@/lib/arcjet";
+import arcjet, { ARCJET_ENV, protectSignup, shield } from "@/lib/arcjet";
 import { NextRequest, NextResponse } from "next/server";
 import ip from "@arcjet/ip";
 
@@ -59,8 +59,7 @@ export async function POST(req: NextRequest) {
   // Next.js 15 doesn't provide the IP address in the request object so we use
   // the Arcjet utility package to parse the headers and find it. If we're
   // running in development mode, we'll use a local IP address.
-  const userIp =
-    process.env.ARCJET_ENV === "development" ? "127.0.0.1" : ip(req);
+  const userIp = ARCJET_ENV === "development" ? "127.0.0.1" : ip(req);
   // The protect method returns a decision object that contains information
   // about the request.
   const decision = await aj.protect(req, { fingerprint: userIp, email });
