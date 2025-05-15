@@ -2,7 +2,7 @@ import VisitDashboard from "@/components/compositions/VisitDashboard";
 import WhatNext from "@/components/compositions/WhatNext";
 import Divider from "@/components/elements/Divider";
 import type { Metadata } from "next";
-import { headers } from 'next/headers';
+import { headers } from "next/headers";
 import Link from "next/link";
 
 import styles from "@/components/elements/PageShared.module.scss";
@@ -15,7 +15,10 @@ export const metadata: Metadata = {
 export default async function IndexPage() {
   const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
   const headersList = await headers();
-  const hostname = headersList.get('host') || 'example.arcjet.com'; // Default to hosted example if undefined
+  const hostname = headersList.get("host") || "example.arcjet.com"; // Default to hosted example if undefined
+  const protocol = hostname?.match(/^(localhost|127.0.0.1):\d+$/)
+    ? "http"
+    : "https";
 
   return (
     <section className={styles.Content}>
@@ -43,7 +46,9 @@ export default async function IndexPage() {
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
-        <pre className="p-4">curl -v https://{hostname}/bots/test</pre>
+        <pre className="p-4">
+          curl -v {protocol}://{hostname}/bots/test
+        </pre>
         <p className="text-secondary-foreground">
           Your IP will be blocked for 60 seconds.
         </p>

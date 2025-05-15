@@ -3,7 +3,7 @@ import WhatNext from "@/components/compositions/WhatNext";
 import Divider from "@/components/elements/Divider";
 import styles from "@/components/elements/PageShared.module.scss";
 import type { Metadata } from "next";
-import { headers } from 'next/headers';
+import { headers } from "next/headers";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,7 +15,10 @@ export const metadata: Metadata = {
 export default async function IndexPage() {
   const siteKey = process.env.ARCJET_SITE ? process.env.ARCJET_SITE : null;
   const headersList = await headers();
-  const hostname = headersList.get('host') || 'example.arcjet.com'; // Default to hosted example if undefined
+  const hostname = headersList.get("host") || "example.arcjet.com"; // Default to hosted example if undefined
+  const protocol = hostname?.match(/^(localhost|127.0.0.1):\d+$/)
+    ? "http"
+    : "https";
 
   return (
     <section className={styles.Content}>
@@ -56,8 +59,8 @@ export default async function IndexPage() {
           Simulate an attack using <code>curl</code>:
         </p>
         <pre className="p-4">
-          curl -v -H &quot;x-arcjet-suspicious: true&quot;
-          https://{hostname}/attack/test
+          curl -v -H &quot;x-arcjet-suspicious: true&quot; {protocol}://
+          {hostname}/attack/test
         </pre>
         <p className="max-w-[700px] text-secondary-foreground">
           After the 5th request, your IP will be blocked for 15 minutes.
