@@ -18,6 +18,10 @@
   @apply pt-4 text-lg;
 }
 
+.link {
+  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+}
+
 .sectionHeading {
   @apply text-xl font-bold;
 }

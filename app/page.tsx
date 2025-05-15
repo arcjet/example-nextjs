@@ -18,7 +18,7 @@ export default function IndexPage() {
             <Link
               href="https://arcjet.com"
               target="_blank"
-              className="font-bold decoration-1 underline-offset-2 hover:underline"
+              className={styles.link}
             >
               Arcjet
             </Link>{" "}
@@ -32,7 +32,7 @@ export default function IndexPage() {
               href="https://github.com/arcjet/example-nextjs"
               target="_blank"
               rel="noreferrer"
-              className="font-bold decoration-1 underline-offset-2 hover:underline"
+              className={styles.link}
             >
               on GitHub
             </Link>

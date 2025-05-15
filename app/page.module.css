@@ -18,6 +18,10 @@
   @apply flex flex-wrap gap-4;
 }
 
+.link {
+  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+}
+
 .featureSection {
   @apply flex max-w-[980px] flex-col items-start gap-6;
 }

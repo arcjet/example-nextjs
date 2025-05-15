@@ -29,7 +29,7 @@ export default async function IndexPage() {
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/shield/concepts"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             Arcjet Shield
           </Link>
@@ -42,7 +42,7 @@ export default async function IndexPage() {
             href={
               "https://docs.arcjet.com/shield/concepts#which-attacks-will-arcjet-shield-block"
             }
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             suspicious behavior
           </Link>
@@ -84,7 +84,7 @@ export default async function IndexPage() {
             href="https://github.com/arcjet/example-nextjs/blob/main/app/attack/test/route.ts"
             target="_blank"
             rel="noreferrer"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             API route
           </Link>{" "}
@@ -93,7 +93,7 @@ export default async function IndexPage() {
             href="https://github.com/arcjet/example-nextjs/blob/main/lib/arcjet.ts"
             target="_blank"
             rel="noreferrer"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             centralized Arcjet client
           </Link>{" "}

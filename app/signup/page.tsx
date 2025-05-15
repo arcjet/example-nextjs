@@ -25,7 +25,7 @@ export default function IndexPage() {
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/signup-protection/concepts"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             Arcjet&apos;s signup form protection
           </Link>{" "}
@@ -87,7 +87,7 @@ export default function IndexPage() {
             href="https://github.com/arcjet/example-nextjs/blob/main/app/signup/test/route.ts"
             target="_blank"
             rel="noreferrer"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             API route
           </Link>{" "}
@@ -96,7 +96,7 @@ export default function IndexPage() {
             href="https://github.com/arcjet/example-nextjs/blob/main/lib/arcjet.ts"
             target="_blank"
             rel="noreferrer"
-            className="font-bold decoration-1 underline-offset-2 hover:underline"
+            className={styles.link}
           >
             centralized Arcjet client
           </Link>{" "}
