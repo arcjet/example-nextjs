@@ -1,39 +1,56 @@
 .gridLayout {
-  @apply grid items-center gap-6;
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .heading {
-  @apply text-xl font-bold;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
 .contentContainer {
-  @apply flex flex-col gap-8;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .linkContainer {
-  @apply flex items-center gap-6;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .textContainer {
-  @apply flex gap-3;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .textLink {
-  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.textLink:hover {
+  text-decoration-line: underline;
 }
 
 .infoText {
-  @apply text-secondary-foreground;
+  color: hsl(var(--secondary-foreground));
 }
 
 .wrapContainer {
-  @apply flex flex-wrap gap-3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .inlineBlock {
-  @apply inline-block;
+  display: inline-block;
 }
 
 .divider {
-  @apply text-muted-foreground;
+  color: hsl(var(--muted-foreground));
 }

@@ -1,19 +1,30 @@
 /* Form item styles */
-.formItem {
-  @apply space-y-2;
+
+.formItem > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 /* Form label error styles */
+
 .formLabelError {
-  @apply text-destructive;
+  color: hsl(var(--destructive));
 }
 
 /* Form description styles */
+
 .formDescription {
-  @apply text-sm text-muted-foreground;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--muted-foreground));
 }
 
 /* Form message styles */
+
 .formMessage {
-  @apply text-sm font-medium text-destructive;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: hsl(var(--destructive));
 }

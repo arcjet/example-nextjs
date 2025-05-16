@@ -1,15 +1,20 @@
 .paragraph {
-  @apply mb-2 max-w-[700px] text-lg text-secondary-foreground;
+  margin-bottom: 0.5rem;
+  max-width: 700px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: hsl(var(--secondary-foreground));
 }
 
 .iconMargin {
-  @apply mr-2 w-4;
+  margin-right: 0.5rem;
+  width: 1rem;
 }
 
 .textMargin {
-  @apply mr-2;
+  margin-right: 0.5rem;
 }
 
 .arrowIcon {
-  @apply w-4;
+  width: 1rem;
 }

@@ -1,51 +1,84 @@
 .title {
-  @apply text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 .description {
-  @apply max-w-[700px] text-lg;
+  max-width: 700px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .featureList {
-  @apply ms-8 max-w-[700px] list-outside list-disc text-secondary-foreground;
+  margin-inline-start: 2rem;
+  max-width: 700px;
+  list-style-position: outside;
+  list-style-type: disc;
+  color: hsl(var(--secondary-foreground));
 }
 
 .featureItem {
-  @apply text-lg;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .featureItemWithSpace {
-  @apply pt-4 text-lg;
+  padding-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .link {
-  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  text-decoration-line: underline;
 }
 
 .sectionHeading {
-  @apply text-xl font-bold;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
 .formContainer {
-  @apply flex w-[320px] gap-4;
+  display: flex;
+  width: 320px;
+  gap: 1rem;
 }
 
 .secondaryText {
-  @apply text-secondary-foreground;
+  color: hsl(var(--secondary-foreground));
 }
 
 .testList {
-  @apply ms-8 list-outside list-disc;
+  margin-inline-start: 2rem;
+  list-style-position: outside;
+  list-style-type: disc;
 }
 
 .testItem {
-  @apply text-muted-foreground;
+  color: hsl(var(--muted-foreground));
 }
 
 .testItemWithSpace {
-  @apply pt-2 text-muted-foreground;
+  padding-top: 0.5rem;
+  color: hsl(var(--muted-foreground));
 }
 
 .testCode {
-  @apply text-secondary-foreground;
+  color: hsl(var(--secondary-foreground));
 }

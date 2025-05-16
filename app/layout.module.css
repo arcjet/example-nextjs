@@ -1,11 +1,19 @@
 .body {
-  @apply min-h-screen bg-background font-sans antialiased;
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-  @apply relative flex min-h-screen flex-col;
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .content {
-  @apply flex-1;
+  flex: 1 1 0%;
 }

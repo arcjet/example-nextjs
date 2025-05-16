@@ -1,27 +1,50 @@
 .title {
-  @apply text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 .description {
-  @apply max-w-[700px] text-lg;
+  max-width: 700px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .subdescription {
-  @apply max-w-[700px] text-secondary-foreground;
+  max-width: 700px;
+  color: hsl(var(--secondary-foreground));
 }
 
 .sectionHeading {
-  @apply text-xl font-bold;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
 .secondaryText {
-  @apply text-secondary-foreground;
+  color: hsl(var(--secondary-foreground));
 }
 
 .link {
-  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  text-decoration-line: underline;
 }
 
 .formContainer {
-  @apply flex gap-4;
+  display: flex;
+  gap: 1rem;
 }
