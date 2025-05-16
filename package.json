@@ -19,14 +19,14 @@
   },
   "private": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "check": "next lint && trunk check",
+    "fmt": "trunk fmt",
     "test:open": "playwright test --ui-host=0.0.0.0",
     "test:run": "playwright test"
   },
@@ -52,16 +52,13 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@playwright/test": "^1.52.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/parser": "^8.32",
-    "autoprefixer": "^10.4.21",
-    "eslint": "9",
+    "eslint": "9.26.0",
     "eslint-config-next": "15.3.2",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-react": "^7.37",
     "postcss": "^8",
     "sass": "^1.89",
     "typescript": "^5"
