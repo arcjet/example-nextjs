@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import "@/styles/globals.scss";
+import "@/styles/globals.css";
 import type { Viewport } from "next";
 import { Metadata } from "next";
 import Script from "next/script";
