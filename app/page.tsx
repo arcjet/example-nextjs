@@ -2,7 +2,6 @@ import WhatNext from "@/components/compositions/WhatNext";
 import Divider from "@/components/elements/Divider";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 
 import sharedStyles from "@/components/elements/PageShared.module.scss";
 import styles from "./page.module.css";
@@ -90,17 +89,18 @@ export default function IndexPage() {
                 title="Deploy with Vercel"
                 target="_blank"
               >
-                <Image
-                  src="https://vercel.com/button"
-                  alt="Deploy with Vercel"
-                />
+                {/* next/image is unnecessary for this svg */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://vercel.com/button" alt="Deploy with Vercel" />
               </a>
               <a
                 href="https://app.netlify.com/start/deploy?repository=https://github.com/arcjet/example-nextjs"
                 title="Deploy to Netlify"
                 target="_blank"
               >
-                <Image
+                {/* next/image is unnecessary for this svg */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="https://www.netlify.com/img/deploy/button.svg"
                   alt="Deploy to Netlify"
                 />

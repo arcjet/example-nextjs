@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { forwardRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const darkVisualData = {
   sparkD:
@@ -17,7 +17,7 @@ interface Props {
   className?: string;
 }
 
-const LogoMarkSpark = forwardRef((props: Props, ref) => {
+function LogoMarkSpark(props: Props) {
   const theme = useTheme();
 
   const [visualData, setVisualData] = useState<
@@ -43,7 +43,6 @@ const LogoMarkSpark = forwardRef((props: Props, ref) => {
       />
     </svg>
   );
-});
-LogoMarkSpark.displayName = "LogoMarkSpark";
+}
 
 export default LogoMarkSpark;
