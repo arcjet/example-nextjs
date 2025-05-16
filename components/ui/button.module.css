@@ -1,0 +1,86 @@
+/* Button base styles */
+.button {
+  @apply inline-flex items-center justify-center rounded-full font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+}
+
+/* Variants */
+.default {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.destructive {
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+}
+
+.outline {
+  @apply border border-input hover:bg-accent hover:text-accent-foreground;
+}
+
+.secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+.ghost {
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.text {
+  @apply text-primary hover:text-accent-foreground;
+}
+
+.textSecondary {
+  @apply text-muted-foreground hover:text-accent-foreground;
+}
+
+.link {
+  @apply underline-offset-4 hover:underline text-primary;
+}
+
+.linkMuted {
+  @apply underline-offset-4 hover:underline text-muted-foreground;
+}
+
+/* Sizes */
+.sizeDefault {
+  @apply text-base h-8 px-5;
+}
+
+.sizeSm {
+  @apply text-sm h-7 px-4 rounded-full;
+}
+
+.sizeLg {
+  @apply text-lg h-9 px-9 rounded-full;
+}
+
+.sizeDefaultTight {
+  @apply text-base h-8;
+}
+
+.sizeSmTight {
+  @apply text-sm h-7 rounded-full;
+}
+
+.sizeLgTight {
+  @apply text-lg h-9 rounded-full;
+}
+
+.sizeXlTight {
+  @apply text-xl h-10 rounded-full;
+}
+
+.sizeDefaultIcon {
+  @apply h-8 w-8;
+}
+
+.sizeSmIcon {
+  @apply h-7 w-7;
+}
+
+.sizeLgIcon {
+  @apply h-9 w-9;
+}
+
+.sizeXlIcon {
+  @apply h-10 w-10;
+}
