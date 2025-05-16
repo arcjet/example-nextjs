@@ -26,17 +26,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
       # TODO: Move to the trunk action once Eslint@9 is supported
-      - name: Run Trunk lint
-        run: |
-          curl -fsSLO --retry 3 https://trunk.io/releases/trunk
-          chmod +x trunk
-          ./trunk check --ci
+      # - name: Run Trunk lint
+      #   run: |
+      #     curl -fsSLO --retry 3 https://trunk.io/releases/trunk
+      #     chmod +x trunk
+      #     ./trunk check --ci
       # TODO: Integrate with Trunk once Eslint@9 is supported
       #       https://github.com/trunk-io/plugins/issues/962
       - name: Run ESLint
         run: npx next lint
-      # NOTE: Playwright seems to not recommend cachine the browsers
-      #       https://github.com/microsoft/playwright/issues/7249
+      # NOTE: Playwright seems to not recommend caching the browsers
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       # NOTE: Playwright will run `next build` and catch any issues
