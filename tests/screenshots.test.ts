@@ -15,6 +15,7 @@ for (const [file, pathname] of Object.entries(manifest)) {
     const response = await page.goto(pathname);
     await expect(response?.status()).toEqual(200);
     await expect(page).toHaveScreenshot({
+      fullPage: true,
       maxDiffPixelRatio: 0.03,
       threshold: 0.2,
     });
