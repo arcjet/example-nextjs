@@ -1,0 +1,19 @@
+/* Form item styles */
+.formItem {
+  @apply space-y-2;
+}
+
+/* Form label error styles */
+.formLabelError {
+  @apply text-destructive;
+}
+
+/* Form description styles */
+.formDescription {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Form message styles */
+.formMessage {
+  @apply text-sm font-medium text-destructive;
+}
