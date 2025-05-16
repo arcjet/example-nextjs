@@ -1,0 +1,39 @@
+.gridLayout {
+  @apply grid items-center gap-6;
+}
+
+.heading {
+  @apply text-xl font-bold;
+}
+
+.contentContainer {
+  @apply flex flex-col gap-8;
+}
+
+.linkContainer {
+  @apply flex items-center gap-6;
+}
+
+.textContainer {
+  @apply flex gap-3;
+}
+
+.textLink {
+  @apply font-bold decoration-1 underline-offset-2 hover:underline;
+}
+
+.infoText {
+  @apply text-secondary-foreground;
+}
+
+.wrapContainer {
+  @apply flex flex-wrap gap-3;
+}
+
+.inlineBlock {
+  @apply inline-block;
+}
+
+.divider {
+  @apply text-muted-foreground;
+}

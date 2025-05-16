@@ -77,7 +77,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {startDecorator}
-        {children && <span className="flex-inline">{children}</span>}
+        {children && <span>{children}</span>}
         {endDecorator}
       </Comp>
     );

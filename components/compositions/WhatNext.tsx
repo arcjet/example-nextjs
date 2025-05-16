@@ -4,13 +4,14 @@ import Link from "next/link";
 import * as React from "react";
 import { memo } from "react";
 
-import styles from "./WhatNext.module.scss";
+import scssStyles from "./WhatNext.module.scss";
+import cssStyles from "./WhatNext.module.css";
 
-export const variants = cva([styles.Comp, " grid items-center gap-6"], {
+export const variants = cva([scssStyles.Comp, cssStyles.gridLayout], {
   variants: {
     variant: {
-      live: styles.Live,
-      deployed: styles.Deployed,
+      live: scssStyles.Live,
+      deployed: scssStyles.Deployed,
     },
   },
   defaultVariants: {
@@ -28,11 +29,11 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
   ({ className, deployed, variant, ...props }, ref) => {
     return (
       <div ref={ref} className={variants({ variant, className })} {...props}>
-        <h2 className="text-xl font-bold">What next?</h2>
-        <div className="flex flex-col gap-8">
+        <h2 className={cssStyles.heading}>What next?</h2>
+        <div className={cssStyles.contentContainer}>
           {deployed ? (
             <>
-              <div className="flex items-center gap-6">
+              <div className={cssStyles.linkContainer}>
                 <Link
                   href="https://github.com/arcjet/arcjet-js/tree/main/examples"
                   target="_blank"
@@ -43,19 +44,19 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
                 <Link
                   href="https://docs.arcjet.com"
                   target="_blank"
-                  className="font-bold decoration-1 underline-offset-2 hover:underline"
+                  className={cssStyles.textLink}
                 >
                   Arcjet docs
                 </Link>
               </div>
-              <div className="flex gap-3">
-                <span className="text-secondary-foreground">Get in touch</span>
+              <div className={cssStyles.textContainer}>
+                <span className={cssStyles.infoText}>Get in touch</span>
 
                 <Link
                   href="https://arcjet.com/discord"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-bold decoration-1 underline-offset-2 hover:underline"
+                  className={cssStyles.textLink}
                 >
                   Join our Discord
                 </Link>
@@ -72,27 +73,25 @@ const WhatNext = React.forwardRef<HTMLDivElement, Props>(
                   Sign up for Arcjet
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <span className="text-secondary-foreground">
-                  Want to know more?
-                </span>
+              <div className={cssStyles.wrapContainer}>
+                <span className={cssStyles.infoText}>Want to know more?</span>
 
-                <span className="inline-block">
+                <span className={cssStyles.inlineBlock}>
                   <Link
                     href="https://docs.arcjet.com"
                     target="_blank"
-                    className="font-bold decoration-1 underline-offset-2 hover:underline"
+                    className={cssStyles.textLink}
                   >
                     Arcjet docs
                   </Link>
-                  <span className="text-muted-foreground">
+                  <span className={cssStyles.divider}>
                     &nbsp;&nbsp;/&nbsp;&nbsp;
                   </span>
                   <Link
                     href="https://arcjet.com/discord"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-bold decoration-1 underline-offset-2 hover:underline"
+                    className={cssStyles.textLink}
                   >
                     Join our Discord
                   </Link>

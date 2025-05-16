@@ -1,0 +1,15 @@
+.paragraph {
+  @apply mb-2 max-w-[700px] text-lg text-secondary-foreground;
+}
+
+.iconMargin {
+  @apply mr-2 w-4;
+}
+
+.textMargin {
+  @apply mr-2;
+}
+
+.arrowIcon {
+  @apply w-4;
+}

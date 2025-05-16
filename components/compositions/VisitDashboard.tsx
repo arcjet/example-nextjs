@@ -8,9 +8,10 @@ import Link from "next/link";
 import * as React from "react";
 import { memo } from "react";
 
-import styles from "./VisitDashboard.module.scss";
+import scssStyles from "./VisitDashboard.module.scss";
+import styles from "./VisitDashboard.module.css";
 
-export const variants = cva(styles.VisitDashboard, {
+export const variants = cva(scssStyles.VisitDashboard, {
   variants: {
     variant: {},
   },
@@ -32,14 +33,14 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
         pad={3}
         {...props}
       >
-        <p className="mb-2 max-w-[700px] text-lg text-secondary-foreground">
+        <p className={styles.paragraph}>
           The requests will show in the Arcjet&apos;s dashboard once issued.
         </p>
         <Link
           href={`https://app.arcjet.com/sites/${siteKey}`}
           target="arcjet-app"
           className={
-            styles.Link +
+            scssStyles.Link +
             " " +
             buttonVariants({
               variant: "link",
@@ -47,9 +48,9 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
             })
           }
         >
-          <LogoMarkSpark className="mr-2 w-4" />{" "}
-          <span className="mr-2">Visit your site dashboard</span>{" "}
-          <IconArrowExternal classes={["w-4"]} />
+          <LogoMarkSpark className={styles.iconMargin} />{" "}
+          <span className={styles.textMargin}>Visit your site dashboard</span>{" "}
+          <IconArrowExternal classes={[styles.arrowIcon]} />
         </Link>
       </Block>
     );

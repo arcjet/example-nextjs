@@ -1,0 +1,11 @@
+.body {
+  @apply min-h-screen bg-background font-sans antialiased;
+}
+
+.container {
+  @apply relative flex min-h-screen flex-col;
+}
+
+.content {
+  @apply flex-1;
+}

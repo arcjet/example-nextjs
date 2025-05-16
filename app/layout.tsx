@@ -7,6 +7,7 @@ import "@/styles/globals.scss";
 import type { Viewport } from "next";
 import { Metadata } from "next";
 import Script from "next/script";
+import styles from "./layout.module.css";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -52,16 +53,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             data-domain="arcjet.com"
           />
         </head>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-          )}
-        >
+        <body className={cn(styles.body, fontSans.variable)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
+            <div className={styles.container}>
               <SiteHeader />
-              <div className="flex-1">{children}</div>
+              <div className={styles.content}>{children}</div>
             </div>
           </ThemeProvider>
         </body>
