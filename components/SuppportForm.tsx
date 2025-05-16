@@ -15,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import styles from "./SupportForm.module.css";
 
 export function SupportForm() {
   // Allows us to set an error message on the form.
@@ -63,7 +64,10 @@ export function SupportForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={styles.formContainer}
+      >
         <FormField
           control={form.control}
           name="supportMessage" // The name of the field in the form schema.
@@ -73,7 +77,7 @@ export function SupportForm() {
               <FormControl>
                 <Textarea
                   placeholder="Please enter your message."
-                  className="h-24 w-80 resize-none"
+                  className={styles.textArea}
                   {...field}
                 />
               </FormControl>

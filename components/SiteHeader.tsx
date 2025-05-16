@@ -16,7 +16,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useMemo, useState } from "react";
 
-import styles from "./SiteHeader.module.scss";
+import scssStyles from "./SiteHeader.module.scss";
+import styles from "./SiteHeader.module.css";
 
 export function SiteHeader() {
   const mobileNavThres = useMediaQuery({ op: "max", w: 1168 });
@@ -37,10 +38,7 @@ export function SiteHeader() {
       return item.key == "home" ? (
         <Fragment key={"nav-item-" + index}></Fragment>
       ) : item.href && selected ? (
-        <span
-          key={"nav-item-" + index}
-          className={cn("text-md flex h-8 items-center font-bold text-primary")}
-        >
+        <span key={"nav-item-" + index} className={cn(styles.selectedNavItem)}>
           {item.title}
         </span>
       ) : (
@@ -76,8 +74,8 @@ export function SiteHeader() {
               }),
             )}
           >
-            <Icons.gitHub className="size-4" />
-            <span className="sr-only">GitHub</span>
+            <Icons.gitHub className={styles.iconSize} />
+            <span className={styles.srOnly}>GitHub</span>
           </div>
         </Link>
         <ThemeToggle />
@@ -89,7 +87,9 @@ export function SiteHeader() {
     const current = nav.find((item) => pathname.indexOf(item.key) >= 0);
 
     return (
-      <span className={"mr-4 inline-flex gap-5 " + styles.MobileNavItemsWidget}>
+      <span
+        className={cn(styles.mobileNavItems, scssStyles.MobileNavItemsWidget)}
+      >
         {!smallMobileNavThres && (
           <Button
             onClick={() => setNavItemsToggle(!navItemsToggle)}
@@ -104,11 +104,11 @@ export function SiteHeader() {
         )}
 
         {(navItemsToggle || navItemsHoverToggle) && (
-          <div className={styles.MobileNavItemsWrapper}>
-            <div className={styles.MobileNavItems}>
+          <div className={scssStyles.MobileNavItemsWrapper}>
+            <div className={scssStyles.MobileNavItems}>
               {navItems}
               {navLinksInDropdown && (
-                <span className={styles.NavLinks}>{navLinks}</span>
+                <span className={scssStyles.NavLinks}>{navLinks}</span>
               )}
             </div>
           </div>
@@ -127,20 +127,18 @@ export function SiteHeader() {
   ]);
 
   return (
-    <header
-      className={styles.SiteHeader + " sticky top-0 z-40 w-full bg-background"}
-    >
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <Link href="/" className={styles.Logo}>
+    <header className={cn(scssStyles.SiteHeader, styles.header)}>
+      <div className={styles.wrapper}>
+        <Link href="/" className={scssStyles.Logo}>
           <Image
-            className={styles.Image + " dark"}
+            className={scssStyles.Image + " dark"}
             src="/static/brand/LogoLockupExploreDark+Title.svg"
             alt="Arcjet Example app"
             height={30}
             width={310}
           />
           <Image
-            className={styles.Image + " light"}
+            className={scssStyles.Image + " light"}
             src="/static/brand/LogoLockupExploreLight+Title.svg"
             alt="Arcjet Example app"
             height={30}
@@ -148,11 +146,11 @@ export function SiteHeader() {
           />
         </Link>
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="mt-[5px] flex items-center space-x-1">
+        <div className={styles.navContainer}>
+          <nav className={styles.nav}>
             {!mobileNavThres ? (
               nav?.length ? (
-                <span className="mr-4 inline-flex gap-5">{navItems}</span>
+                <span className={styles.mobileNavItems}>{navItems}</span>
               ) : null
             ) : (
               !smallMobileNavThres && mobileNavItemsWidget
@@ -162,9 +160,9 @@ export function SiteHeader() {
           </nav>
 
           {smallMobileNavThres && (
-            <nav className="mt-[5px] flex items-center space-x-1">
+            <nav className={styles.nav}>
               <Button
-                className={styles.MenuButton}
+                className={scssStyles.MenuButton}
                 onClick={() => setNavItemsToggle(!navItemsToggle)}
                 variant={navItemsToggle ? "text" : "textSecondary"}
                 size="xlTight"

@@ -4,6 +4,7 @@ import ThemeSystem from "@/components/icons/ThemeSystem";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import styles from "./theme-toggle.module.css";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
@@ -15,8 +16,8 @@ export function ThemeToggle() {
       flavour="iconOnly"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-      <ThemeSystem classes={["size-4"]} />
-      <span className="sr-only">Toggle theme</span>
+      <ThemeSystem classes={[styles.themeIcon]} />
+      <span className={styles.srOnly}>Toggle theme</span>
     </Button>
   );
 }

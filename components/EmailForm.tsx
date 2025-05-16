@@ -16,6 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import styles from "./EmailForm.module.css";
 
 export function EmailForm() {
   // Allows us to set an error message on the form.
@@ -66,7 +67,10 @@ export function EmailForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={styles.formContainer}
+      >
         <FormField
           control={form.control}
           name="email" // The name of the field in the form schema.

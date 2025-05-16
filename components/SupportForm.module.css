@@ -1,0 +1,7 @@
+.formContainer {
+  @apply space-y-8;
+}
+
+.textArea {
+  @apply h-24 w-80 resize-none;
+}

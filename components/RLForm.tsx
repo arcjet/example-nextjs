@@ -6,6 +6,7 @@ import { emptyFormSchema } from "@/app/signup/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import styles from "./RLForm.module.css";
 
 export function RLForm() {
   // Allows us to set an error message on the form.
@@ -43,7 +44,10 @@ export function RLForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={styles.formContainer}
+      >
         <Button type="submit">Push me</Button>
         {errors.root?.serverError && (
           <pre>{errors.root.serverError.message}</pre>

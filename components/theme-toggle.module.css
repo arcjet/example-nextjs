@@ -1,0 +1,7 @@
+.themeIcon {
+  @apply size-4;
+}
+
+.srOnly {
+  @apply sr-only;
+}

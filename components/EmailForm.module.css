@@ -1,0 +1,3 @@
+.formContainer {
+  @apply w-full space-y-8;
+}
