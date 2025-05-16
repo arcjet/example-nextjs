@@ -89,6 +89,8 @@ export default function IndexPage() {
                 title="Deploy with Vercel"
                 target="_blank"
               >
+                {/* next/image is unnecessary for this svg */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="https://vercel.com/button" alt="Deploy with Vercel" />
               </a>
               <a
@@ -96,6 +98,8 @@ export default function IndexPage() {
                 title="Deploy to Netlify"
                 target="_blank"
               >
+                {/* next/image is unnecessary for this svg */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://www.netlify.com/img/deploy/button.svg"
                   alt="Deploy to Netlify"
