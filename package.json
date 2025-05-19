@@ -35,7 +35,7 @@
     "@arcjet/ip": "^1.0.0-beta.5",
     "@arcjet/next": "^1.0.0-beta.5",
     "@hookform/resolvers": "^5",
-    "@nosecone/next": "^1.0.0-beta.5",
+    "@nosecone/next": "^1.0.0-beta.7",
     "@radix-ui/react-label": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@types/styled-components": "^5.1.34",
