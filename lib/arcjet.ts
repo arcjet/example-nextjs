@@ -31,8 +31,3 @@ export default arcjet({
     // so they can be set on each sub-page for the demo.
   ],
 });
-
-// In development mode, we infer this from NODE_ENV, but in playwright tests
-// we set it explicitly to "development" so we can run the tests in a
-// development environment.
-export const ARCJET_ENV = process.env.ARCJET_ENV ?? process.env.NODE_ENV;

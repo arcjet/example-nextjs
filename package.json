@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@arcjet/decorate": "1.0.0-beta.7",
+    "@arcjet/env": "^1.0.0-beta.7",
     "@arcjet/ip": "1.0.0-beta.7",
     "@arcjet/next": "1.0.0-beta.7",
     "@hookform/resolvers": "5.0.1",
