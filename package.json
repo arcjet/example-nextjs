@@ -49,12 +49,12 @@
     "react-dom": "19.1.0",
     "react-hook-form": "7.56.4",
     "styled-components": "6.1.18",
-    "zod": "3.25.28"
+    "zod": "3.25.30"
   },
   "devDependencies": {
     "@playwright/test": "1.52.0",
     "@types/node": "22.15.21",
-    "@types/react": "19.1.5",
+    "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
     "sass": "1.89.0",
     "typescript": "5.8.3"
