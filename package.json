@@ -31,10 +31,10 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@arcjet/decorate": "1.0.0-beta.7",
-    "@arcjet/env": "^1.0.0-beta.7",
-    "@arcjet/ip": "1.0.0-beta.7",
-    "@arcjet/next": "1.0.0-beta.7",
+    "@arcjet/decorate": "1.0.0-beta.8",
+    "@arcjet/env": "^1.0.0-beta.8",
+    "@arcjet/ip": "1.0.0-beta.8",
+    "@arcjet/next": "1.0.0-beta.8",
     "@hookform/resolvers": "5.0.1",
     "@nosecone/next": "1.0.0-beta.7",
     "@radix-ui/react-label": "2.1.7",
