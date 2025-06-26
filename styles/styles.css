@@ -1,0 +1,590 @@
+@layer global, component, utility;
+
+/* Next.js doesn't support import <url> @layer */
+/* See: https://github.com/vercel/next.js/issues/55763 */
+@import url("./reset.css");
+@import "@fontsource-variable/figtree";
+
+@property --palette-black {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #030405;
+}
+
+@property --palette-white {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+
+@property --palette-neutral-00 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #111014;
+}
+
+@property --palette-neutral-02 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #232129;
+}
+
+@property --palette-neutral-05 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #4c4855;
+}
+
+@property --palette-neutral-07 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #6e6979;
+}
+
+@property --palette-neutral-09 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #9791a1;
+}
+
+@property --palette-neutral-10 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #aca6b5;
+}
+
+@property --palette-neutral-12 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d1cbd8;
+}
+
+@property --palette-neutral-15 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f8f2fa;
+}
+
+@layer global {
+  :root {
+    color-scheme: light dark;
+
+    /* Typography */
+    --theme-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --theme-font-sans: "Figtree Variable", "Figtree", "Figtree Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    /* Primary colors */
+    --theme-background: light-dark(var(--palette-white), var(--palette-black));
+    --theme-foreground: light-dark(var(--palette-black), var(--palette-white));
+    
+    /* Text hierarchy */
+    --theme-text-primary: light-dark(var(--palette-black), var(--palette-white));
+    --theme-text-secondary: light-dark(var(--palette-neutral-05), var(--palette-neutral-12));
+    --theme-text-muted: light-dark(var(--palette-neutral-07), var(--palette-neutral-09));
+    
+    /* Interactive elements */
+    --theme-border: light-dark(var(--palette-neutral-10), var(--palette-neutral-02));
+    --theme-surface: light-dark(var(--palette-neutral-15), var(--palette-neutral-00));
+    --theme-input: light-dark(var(--palette-neutral-12), var(--palette-neutral-02));
+
+    /* TODO: Use as the override (looks like we'll need javascript to toggle an attribute in 2025...) */
+    /* color-scheme: dark; */
+  }
+
+  * {
+    font-family: var(--theme-font-sans);
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  code {
+    padding: calc(8px * 0.2) calc(8px * 0.75);
+    background-color: var(--theme-surface);
+    border: 1px solid var(--theme-border);
+    border-radius: 0.25rem;
+    font-family: var(--theme-font-mono);
+    font-size: 0.875em;
+  }
+}
+
+@layer component {
+  .layout {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: var(--theme-background);
+    color: var(--theme-foreground);
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    padding-right: 2rem;
+    background-color: var(--theme-background);
+    gap: 16px;
+  }
+
+  .header__nav {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .nav__toggle {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 9999px;
+    color: var(--theme-text-muted);
+    display: inline-flex;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & > svg {
+      height: 1em;
+      width: 1em;
+    }
+
+    &:has(+ #navigation:popover-open) .nav__icon {
+      display: none;
+    }
+
+    &:has(+ #navigation:popover-open) .nav__icon--close {
+      display: unset;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .nav__toggle {
+      display: none;
+    }
+  }
+
+  .nav__icon--close {
+    display: none;
+  }
+
+  #navigation {
+    top: calc(anchor(bottom) + 8px);
+    right: calc(anchor(right) - 16px);
+
+    /* necessary to override inset: 0 default styles */
+    left: auto; 
+    position: fixed;
+
+    
+    background-color: var(--theme-background);
+    padding: .6rem 1.2rem;
+    border-radius: 1em;
+    border: 1px solid oklch(from var(--theme-border) l c h / calc(alpha - 0.4));
+
+    &:popover-open {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    #navigation {
+      position: unset;
+      inset: unset;
+      display: unset;
+      background-color: unset;
+      border: unset;
+
+      padding: 0;
+    }
+  }
+
+  .nav__list {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  @media (min-width: 1400px) {
+    .nav__list {
+      flex-flow: row nowrap;
+      gap: 16px;
+    }
+  }
+
+  .nav__link {
+    color: var(--theme-text-muted);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-decoration: none;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--theme-text-secondary);
+      cursor: pointer;
+    }
+  }
+
+  .nav__link--icon {
+    color: var(--theme-text-secondary);
+
+    & > svg {
+      height: 1em;
+      width: 1em;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .page {
+    display: grid;
+    align-items: center;
+    gap: calc(8px * 6);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: calc(8px * 6) calc(8px * 4) calc(8px * 4);
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .page {
+      padding: calc(8px * 8) calc(8px * 4) calc(8px * 5);
+    }
+  }
+
+  .page__divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--theme-border);
+    opacity: 0.6;
+    border: 0;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 980px;
+    gap: 1.5rem;
+    overflow-x: hidden;
+  }
+
+  .heading--primary {
+    font-size: 1.875rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 768px) {
+    .heading--primary {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .heading--secondary {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+  }
+
+  .section__description {
+    max-width: 700px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .section__subtitle {
+    max-width: 700px;
+    color: var(--theme-text-secondary);
+  }
+
+  .section__actions {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    height: 2rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    text-decoration: none;
+    border: 0 solid;
+    border-radius: 9999px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .button--primary {
+    background-color: var(--theme-foreground);
+    color: var(--theme-background);
+
+    &:hover {
+      background-color: oklch(
+        from var(--theme-foreground) l c h / calc(alpha - 0.1)
+      );
+    }
+  }
+
+  .button--secondary {
+    background-color: var(--theme-background);
+    color: var(--theme-foreground);
+    border-width: 1px;
+    border-color: var(--theme-input);
+
+    &:hover {
+      background-color: var(--theme-surface);
+      color: var(--theme-text-secondary);
+    }
+  }
+
+  .link {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration-line: underline;
+    }
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  .bullets {
+    margin: 0;
+    margin-inline-start: 2rem;
+    max-width: 700px;
+    padding: 0;
+    color: var(--theme-text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    list-style: none;
+    list-style-position: outside;
+    list-style-type: disc;
+
+    & > :not(:first-child) {
+      padding-top: 1rem;
+    }
+  }
+
+  .bulleted--primary {
+    margin: 0;
+    margin-inline-start: 2rem;
+    max-width: 700px;
+    padding: 0;
+    color: var(--theme-text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    list-style: disc;
+    list-style-position: outside;
+
+    & > li {
+      margin-bottom: 1rem;
+    }
+
+    & > li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .bulleted--secondary  {
+    margin: 0;
+    margin-inline-start: 2rem;
+    max-width: 700px;
+    padding: 0;
+    color: var(--theme-text-muted);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    list-style: disc;
+    list-style-position: outside;
+
+    & > li {
+      margin-bottom: 0.5rem;
+    }
+
+    & > li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .codeblock {
+    padding: calc(8px * 2);
+    background-color: var(--theme-surface);
+    border: 1px solid var(--theme-border);
+    border-radius: 0.5rem;
+    font-family: var(--theme-font-mono);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    overflow-x: auto;
+    white-space: pre;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .codeblock {
+      font-size: 0.75rem;
+      padding: calc(8px * 1.5);
+    }
+  }
+
+  .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 320px;
+  }
+
+  .form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form__label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    color: var(--theme-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .form__input {
+    padding: 0.5rem;
+    border: 1px solid var(--theme-input);
+    border-radius: 0.5rem;
+    background-color: var(--theme-background);
+    color: var(--theme-text-primary);
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: var(--theme-text-secondary);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--theme-text-muted);
+    }
+  }
+
+  .form__textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--theme-input);
+    border-radius: 0.5rem;
+    background-color: var(--theme-background);
+    color: var(--theme-text-primary);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    min-height: 6rem;
+    resize: vertical;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: var(--theme-text-secondary);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: var(--theme-text-muted);
+    }
+  }
+
+  .form__description {
+    color: var(--theme-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: -0.25rem;
+  }
+
+  .form__button {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .form__error {
+    color: var(--theme-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: 0.75rem;
+    background-color: var(--theme-surface);
+    border: 1px solid var(--theme-border);
+    border-radius: 0.5rem;
+  }
+
+  .form__success {
+    color: var(--theme-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: 0.75rem;
+    background-color: var(--theme-surface);
+    border: 1px solid var(--theme-border);
+    border-radius: 0.5rem;
+  }
+}
+
+@layer utility {
+  @media (prefers-color-scheme: dark) {
+    .light {
+      display: none;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .dark {
+      display: none;
+    }
+  }
+}
