@@ -1,5 +1,4 @@
 import { signIn } from "@/lib/auth";
-import { buttonVariants } from "@/components/ui/button";
 
 export function SignIn() {
   let needToConfigureGitHub: boolean;
@@ -19,7 +18,7 @@ export function SignIn() {
       <button
         type="submit"
         disabled={needToConfigureGitHub}
-        className={buttonVariants({ variant: "outline" })}
+        className="button button--secondary"
       >
         {needToConfigureGitHub
           ? "Configure your GitHub OAuth app credentials in .env to sign in"
