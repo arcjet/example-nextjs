@@ -18,7 +18,7 @@ export default async function IndexPage() {
     <main className="page">
       <div className="section">
         <h1 className="heading--primary">Arcjet rate limiting example</h1>
-        <p className="section__description">
+        <p className="typography--description">
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
@@ -38,9 +38,9 @@ export default async function IndexPage() {
 
         {session?.user ? (
           <>
-            <p className="section__description">
+            <p className="typography--description">
               You are authenticated as {session.user?.email}
-              <span className="section__subtitle">
+              <span className="typography--subtitle">
                 {" "}
                 – the limit is set to 5 requests every 60 seconds.
               </span>
@@ -48,9 +48,9 @@ export default async function IndexPage() {
           </>
         ) : (
           <>
-            <p className="section__description">
+            <p className="typography--description">
               You are not authenticated
-              <span className="section__subtitle">
+              <span className="typography--subtitle">
                 {" "}
                 – the limit is set to 2 requests every 60 seconds.
               </span>
@@ -58,7 +58,7 @@ export default async function IndexPage() {
           </>
         )}
 
-        <p className="section__subtitle">
+        <p className="typography--subtitle">
           Rate limits can be{" "}
           <Link
             href="https://docs.arcjet.com/reference/nextjs#ad-hoc-rules"
@@ -76,7 +76,7 @@ export default async function IndexPage() {
 
       <div className="section">
         <h2 className="heading--secondary">See the code</h2>
-        <p className="section__subtitle">
+        <p className="typography--subtitle">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/rate-limiting/test/route.ts"

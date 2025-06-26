@@ -3,7 +3,7 @@ export default function WelcomePage() {
     <main className="page">
       <div className="section">
         <h1 className="heading--primary">Thanks!</h1>
-        <p className="section__description">
+        <p className="typography--primary">
           If this were a real form you would be signed up.
         </p>
       </div>

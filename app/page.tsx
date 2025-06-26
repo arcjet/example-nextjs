@@ -10,7 +10,7 @@ export default function IndexPage() {
         <h1 className="heading--primary">
           Arcjet Next.js example app
         </h1>
-        <p className="section__description">
+        <p className="typography--primary">
           <Link href="https://arcjet.com" target="_blank" className="link">
             Arcjet
           </Link>{" "}
@@ -18,7 +18,7 @@ export default function IndexPage() {
           detection. Rate limiting. Email validation. Attack protection. Data
           redaction. A developer-first approach to security.
         </p>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           This is an example Next.js application using Arcjet. The code is{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs"

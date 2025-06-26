@@ -17,7 +17,7 @@ export default function IndexPage() {
     <main className="page">
       <div className="section">
         <h1 className="heading--primary">Arcjet signup form protection</h1>
-        <p className="section__description">
+        <p className="typography--primary">
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/signup-protection/concepts"
@@ -52,7 +52,7 @@ export default function IndexPage() {
         {siteKey && <VisitDashboard />}
 
         <h2 className="heading--secondary">Test emails</h2>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           Try these emails to see how it works:
         </p>
         <ul className="bulleted--secondary">
@@ -75,7 +75,7 @@ export default function IndexPage() {
 
       <div className="section">
         <h2 className="heading--secondary">See the code</h2>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/signup/test/route.ts"

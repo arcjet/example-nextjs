@@ -19,7 +19,7 @@ export default function IndexPage() {
         <h1 className="heading--primary">
           Arcjet sensitive info detection example
         </h1>
-        <p className="section__description">
+        <p className="typography--primary">
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/sensitive-info/concepts"
@@ -31,7 +31,7 @@ export default function IndexPage() {
           configured to detect other types of sensitive information and custom
           patterns.
         </p>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           The request is analyzed entirely on your server so no sensitive
           information is sent to Arcjet.
         </p>
@@ -51,7 +51,7 @@ export default function IndexPage() {
 
       <div className="section">
         <h2 className="heading--secondary">See the code</h2>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/sensitive-info/test/route.ts"
