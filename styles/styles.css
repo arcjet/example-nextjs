@@ -100,7 +100,7 @@
 
   code {
     padding: calc(8px * 0.2) calc(8px * 0.75);
-    background-color: var(--theme-surface);
+    background-color: light-dark(var(--theme-background), var(--theme-surface));
     border: 1px solid var(--theme-border);
     border-radius: 0.25rem;
     font-family: var(--theme-font-mono);
@@ -173,7 +173,7 @@
     }
   }
 
-  @media (min-width: 1400px) {
+  @media (width >= 1024px) {
     .nav__toggle {
       display: none;
     }
@@ -202,7 +202,7 @@
     }
   }
 
-  @media (min-width: 1400px) {
+  @media (width >= 1024px) {
     #navigation {
       position: unset;
       inset: unset;
@@ -224,7 +224,7 @@
     padding: 0;
   }
 
-  @media (min-width: 1400px) {
+  @media (width >= 1024px) {
     .nav__list {
       flex-flow: row nowrap;
       gap: 16px;
@@ -266,7 +266,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: calc(8px * 6) calc(8px * 4) calc(8px * 4);
-    overflow-x: hidden;
+    width: 100%;
   }
 
   @media (min-width: 768px) {
@@ -287,9 +287,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 980px;
+    max-width: 700px;
     gap: 1.5rem;
-    overflow-x: hidden;
   }
 
   .heading--primary {
@@ -312,14 +311,13 @@
     line-height: 1.75rem;
   }
 
-  .section__description {
-    max-width: 700px;
+  .typography--primary {
     font-size: 1.125rem;
     line-height: 1.75rem;
+    max-width: 700px;
   }
 
-  .section__subtitle {
-    max-width: 700px;
+  .typography--secondary {
     color: var(--theme-text-secondary);
   }
 
@@ -448,24 +446,25 @@
   }
 
   .codeblock {
-    padding: calc(8px * 2);
-    background-color: var(--theme-surface);
+    background-color: light-dark(var(--theme-background), var(--theme-surface));
     border: 1px solid var(--theme-border);
     border-radius: 0.5rem;
     font-family: var(--theme-font-mono);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    padding: calc(8px * 1.5);
     line-height: 1.25rem;
     overflow-x: auto;
     white-space: pre;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
+
+    /**
+     * Hack to avoid adding overflow-* to parent elements.
+     */
+    max-width: 80vw;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .codeblock {
-      font-size: 0.75rem;
-      padding: calc(8px * 1.5);
+      max-width: 100%;
     }
   }
 
@@ -474,7 +473,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
   }
 
   .form__field {

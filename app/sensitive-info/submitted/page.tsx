@@ -8,7 +8,7 @@ export default function IndexPage() {
     <div className="page">
       <section className="section">
         <h1 className="heading--primary">Form submitted</h1>
-        <p className="section__description">
+        <p className="typography--primary">
           If this were a real form, your message would have been submitted.
         </p>
       </section>

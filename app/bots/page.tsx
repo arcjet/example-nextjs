@@ -21,7 +21,7 @@ export default async function IndexPage() {
     <main className="page">
       <div className="section">
         <h1 className="heading--primary">Arcjet bot protection example</h1>
-        <p className="section__description">
+        <p className="typography--primary">
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
@@ -37,17 +37,17 @@ export default async function IndexPage() {
 
       <div className="section">
         <h2 className="heading--secondary">Try it</h2>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
         <pre className="codeblock">
           curl -v {protocol}://{hostname}/bots/test
         </pre>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           Your IP will be blocked for 60 seconds.
         </p>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           Bot protection can also be installed in middleware to protect your
           entire site.
         </p>
@@ -59,7 +59,7 @@ export default async function IndexPage() {
 
       <div className="section">
         <h2 className="heading--secondary">See the code</h2>
-        <p className="section__subtitle">
+        <p className="typography--secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/bots/test/route.ts"

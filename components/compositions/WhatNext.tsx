@@ -18,8 +18,10 @@ export function WhatNext({ deployed }: Props) {
             See all example apps
           </Link>
         </div>
-        <p className="section__subtitle">
+        <p>
+          <span className="typography--secondary">
           Want to know more?{" "}
+          </span>
           <Link
             href="https://docs.arcjet.com"
             target="_blank"
@@ -27,7 +29,9 @@ export function WhatNext({ deployed }: Props) {
           >
             Arcjet docs
           </Link>
+          <span className="typography--secondary">
           {" / "}
+          </span>
           <Link
             href="https://arcjet.com/discord"
             target="_blank"
@@ -53,8 +57,10 @@ export function WhatNext({ deployed }: Props) {
           Sign up for Arcjet
         </Link>
       </div>
-      <p className="section__subtitle">
-        Want to know more?{" "}
+      <p>
+        <span className="typography--secondary">
+          Want to know more?{" "}
+          </span>
         <Link
           href="https://docs.arcjet.com"
           target="_blank"
@@ -62,7 +68,9 @@ export function WhatNext({ deployed }: Props) {
         >
           Arcjet docs
         </Link>
-        {" / "}
+        <span className="typography--secondary">
+          {" / "}
+          </span>
         <Link
           href="https://arcjet.com/discord"
           target="_blank"
