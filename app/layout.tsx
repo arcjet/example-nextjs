@@ -107,7 +107,7 @@ export default function RootLayout({ children }: Props) {
               </nav>
               <a
                 className="nav__link--icon"
-                href="https://github.com/arcjet/example"
+                href="https://github.com/arcjet/example-nextjs"
                 target="_blank"
                 rel="noreferrer"
               >
