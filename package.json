@@ -35,6 +35,7 @@
     "@arcjet/env": "^1.0.0-beta.8",
     "@arcjet/ip": "1.0.0-beta.8",
     "@arcjet/next": "1.0.0-beta.8",
+    "@fontsource-variable/figtree": "^5.2.8",
     "@hookform/resolvers": "5.1.1",
     "@nosecone/next": "1.0.0-beta.8",
     "@radix-ui/react-label": "2.1.7",
