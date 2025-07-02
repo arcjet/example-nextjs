@@ -12,6 +12,7 @@ import "@/styles/styles.css";
 import { IconMenu } from "@/components/icons/Menu";
 import { IconCancel } from "@/components/icons/Cancel";
 import { PopoverTarget } from "@/components/PopoverTarget";
+import { NavLink } from "@/components/NavLink";
 
 export const metadata: Metadata = {
   title: {
@@ -80,29 +81,29 @@ export default function RootLayout({ children }: Props) {
               <PopoverTarget id="navigation" closeAtWidthPx={1024}>
                 <ul className="navigation-links">
                   <li>
-                    <a className="navigation-link" href="/signup">
+                    <NavLink className="navigation-link" href="/signup">
                       Signup form protection
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="navigation-link" href="/bots">
+                    <NavLink className="navigation-link" href="/bots">
                       Bot protection
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="navigation-link" href="/rate-limiting">
+                    <NavLink className="navigation-link" href="/rate-limiting">
                       Rate limiting
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="navigation-link" href="/attack">
+                    <NavLink className="navigation-link" href="/attack">
                       Attack protection
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a className="navigation-link" href="/sensitive-info">
+                    <NavLink className="navigation-link" href="/sensitive-info">
                       Sensitive info
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </PopoverTarget>

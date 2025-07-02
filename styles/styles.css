@@ -267,6 +267,10 @@
       color: var(--theme-text-secondary);
       cursor: pointer;
     }
+
+    &[data-active="true"] {
+      color: var(--theme-text-primary);
+    }
   }
 
   .navigation-icon {
