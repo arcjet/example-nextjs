@@ -99,7 +99,7 @@
     /* Interactive elements */
     --theme-border: light-dark(
       var(--palette-neutral-10),
-      var(--palette-neutral-02)
+      var(--palette-neutral-05)
     );
     --theme-surface: light-dark(
       var(--palette-neutral-15),
