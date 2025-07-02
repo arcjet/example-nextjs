@@ -1,15 +1,12 @@
-import pageStyles from "@/components/elements/PageShared.module.scss";
-import styles from "./page.module.css";
-
 export default function WelcomePage() {
   return (
-    <section className={pageStyles.Content}>
-      <div className={pageStyles.Section}>
-        <h1 className={styles.pageHeading}>Thanks!</h1>
-        <p className={styles.pageDescription}>
+    <main className="page">
+      <div className="section">
+        <h1 className="heading-primary">Thanks!</h1>
+        <p className="typography-primary">
           If this were a real form you would be signed up.
         </p>
       </div>
-    </section>
+    </main>
   );
 }

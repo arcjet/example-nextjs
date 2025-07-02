@@ -1,12 +1,8 @@
 import VisitDashboard from "@/components/compositions/VisitDashboard";
-import WhatNext from "@/components/compositions/WhatNext";
-import Divider from "@/components/elements/Divider";
+import { WhatNext } from "@/components/compositions/WhatNext";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
-
-import sharedStyles from "@/components/elements/PageShared.module.scss";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Bot protection example",
@@ -22,14 +18,14 @@ export default async function IndexPage() {
     : "https";
 
   return (
-    <section className={sharedStyles.Content}>
-      <div className={sharedStyles.Section}>
-        <h1 className={styles.title}>Arcjet bot protection example</h1>
-        <p className={styles.description}>
+    <main className="page">
+      <div className="section">
+        <h1 className="heading-primary">Arcjet bot protection example</h1>
+        <p className="typography-primary">
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
-            className={styles.link}
+            className="link"
           >
             Arcjet&apos;s bot protection
           </Link>{" "}
@@ -37,21 +33,21 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <Divider />
+      <hr className="divider" />
 
-      <div className={sharedStyles.Section}>
-        <h2 className={styles.sectionHeading}>Try it</h2>
-        <p className={styles.secondaryText}>
+      <div className="section">
+        <h2 className="heading-secondary">Try it</h2>
+        <p className="typography-secondary">
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
-        <pre className={styles.codeExample}>
+        <pre className="codeblock">
           curl -v {protocol}://{hostname}/bots/test
         </pre>
-        <p className={styles.secondaryText}>
+        <p className="typography-secondary">
           Your IP will be blocked for 60 seconds.
         </p>
-        <p className={styles.explanation}>
+        <p className="typography-secondary">
           Bot protection can also be installed in middleware to protect your
           entire site.
         </p>
@@ -59,17 +55,17 @@ export default async function IndexPage() {
         {siteKey && <VisitDashboard />}
       </div>
 
-      <Divider />
+      <hr className="divider" />
 
-      <div className={sharedStyles.Section}>
-        <h2 className={styles.sectionHeading}>See the code</h2>
-        <p className={styles.secondaryText}>
+      <div className="section">
+        <h2 className="heading-secondary">See the code</h2>
+        <p className="typography-secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/bots/test/route.ts"
             target="_blank"
             rel="noreferrer"
-            className={styles.link}
+            className="link"
           >
             API route
           </Link>{" "}
@@ -78,7 +74,7 @@ export default async function IndexPage() {
             href="https://github.com/arcjet/example-nextjs/blob/main/lib/arcjet.ts"
             target="_blank"
             rel="noreferrer"
-            className={styles.link}
+            className="link"
           >
             centralized Arcjet client
           </Link>{" "}
@@ -86,9 +82,9 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <Divider />
+      <hr className="divider" />
 
       <WhatNext deployed={siteKey != null} />
-    </section>
+    </main>
   );
 }

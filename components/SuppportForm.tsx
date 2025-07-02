@@ -1,28 +1,12 @@
 "use client";
 
 import { formSchema } from "@/app/sensitive-info/schema";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import styles from "./SupportForm.module.css";
 
 export function SupportForm() {
-  // Allows us to set an error message on the form.
-  const {
-    setError,
-    formState: { errors },
-  } = useForm();
   // Used to navigate to the welcome page after a successful form submission.
   const router = useRouter();
 
@@ -56,40 +40,37 @@ export function SupportForm() {
       const error = await result.json();
       const errorMessage = error?.message || statusText;
 
-      setError("root.serverError", {
+      form.setError("root.serverError", {
         message: `We couldn't submit the form: ${errorMessage}`,
       });
     }
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={styles.formContainer}
-      >
-        <FormField
-          control={form.control}
-          name="supportMessage" // The name of the field in the form schema.
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Please enter your message."
-                  className={styles.textArea}
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-              {errors.root?.serverError && (
-                <FormMessage>{errors.root.serverError.message}</FormMessage>
-              )}
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="form">
+      <div className="form-field">
+        <label className="form-label">
+          Message
+          <textarea
+            placeholder="Please enter your message."
+            className="form-textarea"
+            {...form.register("supportMessage")}
+          />
+        </label>
+        {form.formState.errors.supportMessage && (
+          <div className="form-error">
+            {form.formState.errors.supportMessage.message}
+          </div>
+        )}
+        {form.formState.errors.root?.serverError && (
+          <div className="form-error">
+            {form.formState.errors.root.serverError.message}
+          </div>
+        )}
+      </div>
+      <button type="submit" className="button-primary form-button">
+        Submit
+      </button>
+    </form>
   );
 }

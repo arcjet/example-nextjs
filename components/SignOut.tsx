@@ -1,5 +1,4 @@
 import { signOut } from "@/lib/auth";
-import { buttonVariants } from "@/components/ui/button";
 
 export function SignOut() {
   return (
@@ -9,7 +8,7 @@ export function SignOut() {
         await signOut();
       }}
     >
-      <button type="submit" className={buttonVariants({ variant: "outline" })}>
+      <button type="submit" className="button-secondary">
         Sign out
       </button>
     </form>

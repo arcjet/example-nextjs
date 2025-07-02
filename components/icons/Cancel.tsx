@@ -1,15 +1,13 @@
-import { forwardRef } from "react";
-
-interface Props {
+type Props = {
   classes?: string[];
-}
+};
 
-const Cancel = forwardRef<SVGSVGElement, Props>((props: Props, ref) => {
+export function IconCancel(props: Props) {
   let cls = "icon icon-cancel";
   if (props.classes) cls += " " + props.classes.join(" ");
 
   return (
-    <svg ref={ref} viewBox="0 0 128 128" className={cls} stroke="currentColor">
+    <svg viewBox="0 0 128 128" className={cls} stroke="currentColor">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -19,7 +17,4 @@ const Cancel = forwardRef<SVGSVGElement, Props>((props: Props, ref) => {
       />
     </svg>
   );
-});
-Cancel.displayName = "Cancel";
-
-export default Cancel;
+}

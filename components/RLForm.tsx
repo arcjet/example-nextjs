@@ -1,19 +1,15 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
 import { emptyFormSchema } from "@/app/signup/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import styles from "./RLForm.module.css";
 
 export function RLForm() {
-  // Allows us to set an error message on the form.
-  const {
-    setError,
-    formState: { errors },
-  } = useForm();
+  // Use state to persist latest error message even across form submissions.
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   // Set up the form with the Zod schema and a resolver.
   const form = useForm<z.infer<typeof emptyFormSchema>>({
     resolver: zodResolver(emptyFormSchema),
@@ -32,27 +28,20 @@ export function RLForm() {
     });
 
     // Check if the request was successful and redirect to the welcome page if
-    // so. Otherwise, set a root error message.
+    // so. Otherwise, set the error message.
     const statusText = result?.statusText || "Service error";
     const error = await result.json();
-    const errorMessage = error?.message || error.error || statusText;
-
-    setError("root.serverError", {
-      message: `${errorMessage}`,
-    });
+    setErrorMessage(error?.message || error.error || statusText);
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={styles.formContainer}
-      >
-        <Button type="submit">Push me</Button>
-        {errors.root?.serverError && (
-          <pre>{errors.root.serverError.message}</pre>
-        )}
+    <>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="form">
+        <button type="submit" className="button-primary form-button">
+          Push me
+        </button>
       </form>
-    </Form>
+      {errorMessage && <code>{errorMessage}</code>}
+    </>
   );
 }
