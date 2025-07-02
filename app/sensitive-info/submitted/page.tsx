@@ -7,13 +7,13 @@ export default function IndexPage() {
   return (
     <div className="page">
       <section className="section">
-        <h1 className="heading--primary">Form submitted</h1>
-        <p className="typography--primary">
+        <h1 className="heading-primary">Form submitted</h1>
+        <p className="typography-primary">
           If this were a real form, your message would have been submitted.
         </p>
       </section>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <WhatNext deployed={siteKey != null} />
     </div>

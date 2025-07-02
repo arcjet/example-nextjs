@@ -17,7 +17,7 @@ export default async function IndexPage() {
   return (
     <main className="page">
       <div className="section">
-        <h1 className="heading--primary">Arcjet rate limiting example</h1>
+        <h1 className="heading-primary">Arcjet rate limiting example</h1>
         <p className="typography--description">
           This page is protected by{" "}
           <Link
@@ -30,10 +30,10 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">Try it</h2>
+        <h2 className="heading-secondary">Try it</h2>
         <RLForm />
 
         {session?.user ? (
@@ -72,10 +72,10 @@ export default async function IndexPage() {
         {session?.user ? <SignOut /> : <SignIn />}
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">See the code</h2>
+        <h2 className="heading-secondary">See the code</h2>
         <p className="typography--subtitle">
           The{" "}
           <Link
@@ -99,7 +99,7 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <WhatNext />
     </main>

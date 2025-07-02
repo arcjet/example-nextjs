@@ -16,10 +16,10 @@ export default function IndexPage() {
   return (
     <main className="page">
       <div className="section">
-        <h1 className="heading--primary">
+        <h1 className="heading-primary">
           Arcjet sensitive info detection example
         </h1>
-        <p className="typography--primary">
+        <p className="typography-primary">
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/sensitive-info/concepts"
@@ -31,27 +31,27 @@ export default function IndexPage() {
           configured to detect other types of sensitive information and custom
           patterns.
         </p>
-        <p className="typography--secondary">
+        <p className="typography-secondary">
           The request is analyzed entirely on your server so no sensitive
           information is sent to Arcjet.
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">Try it</h2>
+        <h2 className="heading-secondary">Try it</h2>
 
         <SupportForm />
 
         {siteKey && <VisitDashboard />}
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">See the code</h2>
-        <p className="typography--secondary">
+        <h2 className="heading-secondary">See the code</h2>
+        <p className="typography-secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/sensitive-info/test/route.ts"
@@ -74,7 +74,7 @@ export default function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <WhatNext deployed={siteKey != null} />
     </main>
