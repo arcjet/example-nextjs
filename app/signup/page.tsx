@@ -57,16 +57,15 @@ export default function IndexPage() {
         </p>
         <ul className="list-bullets-secondary">
           <li>
-            <code>invalid.@arcjet</code> – is an
-            invalid email address.
+            <code>invalid.@arcjet</code> – is an invalid email address.
           </li>
           <li>
             <code>test@0zc7eznv3rsiswlohu.tk</code>{" "}
             <span>– is from a disposable email provider.</span>
           </li>
           <li>
-            <code>nonexistent@arcjet.ai</code> – is
-            a valid email address & domain, but has no MX records.
+            <code>nonexistent@arcjet.ai</code> – is a valid email address &
+            domain, but has no MX records.
           </li>
         </ul>
       </div>

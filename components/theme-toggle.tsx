@@ -21,7 +21,9 @@ export function ThemeToggle() {
       }}
     >
       <ThemeSystem classes={["icon"]} />
-      <span style={{ position: "absolute", left: "-9999px" }}>Toggle theme</span>
+      <span style={{ position: "absolute", left: "-9999px" }}>
+        Toggle theme
+      </span>
     </button>
   );
 }

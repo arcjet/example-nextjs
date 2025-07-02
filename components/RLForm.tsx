@@ -41,9 +41,7 @@ export function RLForm() {
           Push me
         </button>
       </form>
-      {errorMessage && (
-        <code>{errorMessage}</code>
-      )}
+      {errorMessage && <code>{errorMessage}</code>}
     </>
   );
 }

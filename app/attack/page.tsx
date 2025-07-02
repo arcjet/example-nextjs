@@ -24,10 +24,7 @@ export default async function IndexPage() {
         <h1 className="heading-primary">Arcjet attack protection example</h1>
         <p className="typography-primary">
           This page is protected by{" "}
-          <Link
-            href="https://docs.arcjet.com/shield/concepts"
-            className="link"
-          >
+          <Link href="https://docs.arcjet.com/shield/concepts" className="link">
             Arcjet Shield
           </Link>
           .
