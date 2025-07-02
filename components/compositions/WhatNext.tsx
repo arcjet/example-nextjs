@@ -8,18 +8,18 @@ export function WhatNext({ deployed }: Props) {
   if (deployed) {
     return (
       <div className="section">
-        <h2 className="heading--secondary">What next?</h2>
-        <div className="section__actions">
+        <h2 className="heading-secondary">What next?</h2>
+        <div className="list-actions">
           <Link
             href="https://github.com/arcjet/arcjet-js/tree/main/examples"
             target="_blank"
-            className="button button--secondary"
+            className="button-secondary"
           >
             See all example apps
           </Link>
         </div>
         <p>
-          <span className="typography--secondary">
+          <span className="typography-secondary">
           Want to know more?{" "}
           </span>
           <Link
@@ -29,7 +29,7 @@ export function WhatNext({ deployed }: Props) {
           >
             Arcjet docs
           </Link>
-          <span className="typography--secondary">
+          <span className="typography-secondary">
           {" / "}
           </span>
           <Link
@@ -47,18 +47,18 @@ export function WhatNext({ deployed }: Props) {
 
   return (
     <div className="section">
-      <h2 className="heading--secondary">What next?</h2>
-      <div className="section__actions">
+      <h2 className="heading-secondary">What next?</h2>
+      <div className="list-actions">
         <Link
           href="https://app.arcjet.com"
           target="_blank"
-          className="button button--secondary"
+          className="button-secondary"
         >
           Sign up for Arcjet
         </Link>
       </div>
       <p>
-        <span className="typography--secondary">
+        <span className="typography-secondary">
           Want to know more?{" "}
           </span>
         <Link
@@ -68,7 +68,7 @@ export function WhatNext({ deployed }: Props) {
         >
           Arcjet docs
         </Link>
-        <span className="typography--secondary">
+        <span className="typography-secondary">
           {" / "}
           </span>
         <Link

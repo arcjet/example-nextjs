@@ -16,8 +16,8 @@ export default function IndexPage() {
   return (
     <main className="page">
       <div className="section">
-        <h1 className="heading--primary">Arcjet signup form protection</h1>
-        <p className="typography--primary">
+        <h1 className="heading-primary">Arcjet signup form protection</h1>
+        <p className="typography-primary">
           This form uses{" "}
           <Link
             href="https://docs.arcjet.com/signup-protection/concepts"
@@ -27,7 +27,7 @@ export default function IndexPage() {
           </Link>{" "}
           which includes:
         </p>
-        <ul className="bulleted--primary">
+        <ul className="list-bullets-primary">
           <li>
             Arcjet server-side email verification configured to block disposable
             providers and ensure that the domain has a valid MX record.
@@ -42,20 +42,20 @@ export default function IndexPage() {
         </ul>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">Try it</h2>
+        <h2 className="heading-secondary">Try it</h2>
 
         <EmailForm />
 
         {siteKey && <VisitDashboard />}
 
-        <h2 className="heading--secondary">Test emails</h2>
-        <p className="typography--secondary">
+        <h2 className="heading-secondary">Test emails</h2>
+        <p className="typography-secondary">
           Try these emails to see how it works:
         </p>
-        <ul className="bulleted--secondary">
+        <ul className="list-bullets-secondary">
           <li>
             <code>invalid.@arcjet</code> – is an
             invalid email address.
@@ -71,11 +71,11 @@ export default function IndexPage() {
         </ul>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">See the code</h2>
-        <p className="typography--secondary">
+        <h2 className="heading-secondary">See the code</h2>
+        <p className="typography-secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/signup/test/route.ts"
@@ -98,7 +98,7 @@ export default function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <WhatNext deployed={siteKey != null} />
     </main>

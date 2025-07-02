@@ -9,7 +9,7 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="button button--secondary"
+      className="button-secondary"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       style={{
         padding: "0.5rem",
