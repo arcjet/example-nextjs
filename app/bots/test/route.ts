@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
   // If the decision is denied, return an appropriate response. You can inspect
   // the decision results to customize the response.
   if (decision.isDenied() && decision.reason.isBot()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return NextResponse.json({ error: "Bots are forbidden" }, { status: 403 });
   } else if (decision.isDenied() && decision.reason.isRateLimit()) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   } else if (decision.isErrored()) {

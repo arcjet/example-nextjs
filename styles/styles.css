@@ -70,22 +70,45 @@
     color-scheme: light dark;
 
     /* Typography */
-    --theme-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --theme-font-sans: "Figtree Variable", "Figtree", "Figtree Fallback", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --theme-font-mono:
+      ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    --theme-font-sans:
+      "Figtree Variable", "Figtree", "Figtree Fallback", ui-sans-serif,
+      system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
 
     /* Primary colors */
     --theme-background: light-dark(var(--palette-white), var(--palette-black));
     --theme-foreground: light-dark(var(--palette-black), var(--palette-white));
-    
+
     /* Text hierarchy */
-    --theme-text-primary: light-dark(var(--palette-black), var(--palette-white));
-    --theme-text-secondary: light-dark(var(--palette-neutral-05), var(--palette-neutral-12));
-    --theme-text-muted: light-dark(var(--palette-neutral-07), var(--palette-neutral-09));
-    
+    --theme-text-primary: light-dark(
+      var(--palette-black),
+      var(--palette-white)
+    );
+    --theme-text-secondary: light-dark(
+      var(--palette-neutral-05),
+      var(--palette-neutral-12)
+    );
+    --theme-text-muted: light-dark(
+      var(--palette-neutral-07),
+      var(--palette-neutral-09)
+    );
+
     /* Interactive elements */
-    --theme-border: light-dark(var(--palette-neutral-10), var(--palette-neutral-02));
-    --theme-surface: light-dark(var(--palette-neutral-15), var(--palette-neutral-00));
-    --theme-input: light-dark(var(--palette-neutral-12), var(--palette-neutral-02));
+    --theme-border: light-dark(
+      var(--palette-neutral-10),
+      var(--palette-neutral-02)
+    );
+    --theme-surface: light-dark(
+      var(--palette-neutral-15),
+      var(--palette-neutral-00)
+    );
+    --theme-input: light-dark(
+      var(--palette-neutral-12),
+      var(--palette-neutral-02)
+    );
 
     /* TODO: Use as the override (looks like we'll need javascript to toggle an attribute in 2025...) */
     /* color-scheme: dark; */
@@ -189,12 +212,11 @@
     right: calc(anchor(right) - 16px);
 
     /* necessary to override inset: 0 default styles */
-    left: auto; 
+    left: auto;
     position: fixed;
 
-    
     background-color: var(--theme-background);
-    padding: .6rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 1em;
     border: 1px solid oklch(from var(--theme-border) l c h / calc(alpha - 0.4));
 
@@ -417,7 +439,7 @@
     }
   }
 
-  .list-bullets-secondary  {
+  .list-bullets-secondary {
     margin: 0;
     margin-inline-start: 2rem;
     max-width: 700px;

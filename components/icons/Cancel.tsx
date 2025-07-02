@@ -1,6 +1,6 @@
 type Props = {
   classes?: string[];
-}
+};
 
 export function IconCancel(props: Props) {
   let cls = "icon icon-cancel";

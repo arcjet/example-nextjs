@@ -7,9 +7,7 @@ export default function IndexPage() {
   return (
     <main className="page">
       <div className="section">
-        <h1 className="heading-primary">
-          Arcjet Next.js example app
-        </h1>
+        <h1 className="heading-primary">Arcjet Next.js example app</h1>
         <p className="typography-primary">
           <Link href="https://arcjet.com" target="_blank" className="link">
             Arcjet
@@ -84,7 +82,6 @@ export default function IndexPage() {
 
       <hr className="divider" />
 
-      
       <WhatNext deployed={siteKey !== null} />
     </main>
   );

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 type Props = {
   deployed?: boolean;
-}
+};
 
 export function WhatNext({ deployed }: Props) {
   if (deployed) {
@@ -19,19 +19,11 @@ export function WhatNext({ deployed }: Props) {
           </Link>
         </div>
         <p>
-          <span className="typography-secondary">
-          Want to know more?{" "}
-          </span>
-          <Link
-            href="https://docs.arcjet.com"
-            target="_blank"
-            className="link"
-          >
+          <span className="typography-secondary">Want to know more? </span>
+          <Link href="https://docs.arcjet.com" target="_blank" className="link">
             Arcjet docs
           </Link>
-          <span className="typography-secondary">
-          {" / "}
-          </span>
+          <span className="typography-secondary">{" / "}</span>
           <Link
             href="https://arcjet.com/discord"
             target="_blank"
@@ -58,19 +50,11 @@ export function WhatNext({ deployed }: Props) {
         </Link>
       </div>
       <p>
-        <span className="typography-secondary">
-          Want to know more?{" "}
-          </span>
-        <Link
-          href="https://docs.arcjet.com"
-          target="_blank"
-          className="link"
-        >
+        <span className="typography-secondary">Want to know more? </span>
+        <Link href="https://docs.arcjet.com" target="_blank" className="link">
           Arcjet docs
         </Link>
-        <span className="typography-secondary">
-          {" / "}
-          </span>
+        <span className="typography-secondary">{" / "}</span>
         <Link
           href="https://arcjet.com/discord"
           target="_blank"
