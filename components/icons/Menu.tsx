@@ -1,6 +1,6 @@
 type Props = {
   classes?: string[];
-}
+};
 
 export function IconMenu(props: Props) {
   let cls = "icon icon-menu";
@@ -28,4 +28,4 @@ export function IconMenu(props: Props) {
       />
     </svg>
   );
-};
+}

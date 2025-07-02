@@ -20,7 +20,7 @@ export function EmailForm() {
       email: "nonexistent@arcjet.ai",
     },
   });
-  
+
   // Used to navigate to the welcome page after a successful form submission.
   const router = useRouter();
 
@@ -78,8 +78,8 @@ export function EmailForm() {
         )}
       </div>
       <div className="form-button">
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className="button-primary"
           disabled={isSubmitting}
         >
