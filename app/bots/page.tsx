@@ -20,8 +20,8 @@ export default async function IndexPage() {
   return (
     <main className="page">
       <div className="section">
-        <h1 className="heading--primary">Arcjet bot protection example</h1>
-        <p className="typography--primary">
+        <h1 className="heading-primary">Arcjet bot protection example</h1>
+        <p className="typography-primary">
           This page is protected by{" "}
           <Link
             href="https://docs.arcjet.com/bot-protection/concepts"
@@ -33,21 +33,21 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">Try it</h2>
-        <p className="typography--secondary">
+        <h2 className="heading-secondary">Try it</h2>
+        <p className="typography-secondary">
           Make a request using <code>curl</code>, which is considered an
           automated client:
         </p>
         <pre className="codeblock">
           curl -v {protocol}://{hostname}/bots/test
         </pre>
-        <p className="typography--secondary">
+        <p className="typography-secondary">
           Your IP will be blocked for 60 seconds.
         </p>
-        <p className="typography--secondary">
+        <p className="typography-secondary">
           Bot protection can also be installed in middleware to protect your
           entire site.
         </p>
@@ -55,11 +55,11 @@ export default async function IndexPage() {
         {siteKey && <VisitDashboard />}
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <div className="section">
-        <h2 className="heading--secondary">See the code</h2>
-        <p className="typography--secondary">
+        <h2 className="heading-secondary">See the code</h2>
+        <p className="typography-secondary">
           The{" "}
           <Link
             href="https://github.com/arcjet/example-nextjs/blob/main/app/bots/test/route.ts"
@@ -82,7 +82,7 @@ export default async function IndexPage() {
         </p>
       </div>
 
-      <hr className="page__divider" />
+      <hr className="divider" />
 
       <WhatNext deployed={siteKey != null} />
     </main>

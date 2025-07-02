@@ -55,8 +55,8 @@ export function EmailForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
-      <div className="form__field">
-        <label className="form__label">
+      <div className="form-field">
+        <label className="form-label">
           Email
           <input
             {...register("email", {
@@ -64,23 +64,23 @@ export function EmailForm() {
             })}
             type="email"
             placeholder="totoro@example.com"
-            className="form__input"
+            className="form-input"
           />
         </label>
-        <span className="form__description">
+        <span className="form-description">
           Just a test form - you won&apos;t receive any emails.
         </span>
         {errors.email && (
-          <span className="form__error">{errors.email.message}</span>
+          <span className="form-error">{errors.email.message}</span>
         )}
         {errors.root?.serverError && (
-          <span className="form__error">{errors.root.serverError.message}</span>
+          <span className="form-error">{errors.root.serverError.message}</span>
         )}
       </div>
-      <div className="form__button">
+      <div className="form-button">
         <button 
           type="submit" 
-          className="button button--primary"
+          className="button-primary"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Signing up..." : "Sign up"}

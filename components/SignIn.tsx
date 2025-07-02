@@ -18,7 +18,7 @@ export function SignIn() {
       <button
         type="submit"
         disabled={needToConfigureGitHub}
-        className="button button--secondary"
+        className="button-secondary"
       >
         {needToConfigureGitHub
           ? "Configure your GitHub OAuth app credentials in .env to sign in"

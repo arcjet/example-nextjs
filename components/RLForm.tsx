@@ -37,7 +37,7 @@ export function RLForm() {
   return (
     <>
       <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-        <button type="submit" className="button button--primary form__button">
+        <button type="submit" className="button-primary form-button">
           Push me
         </button>
       </form>

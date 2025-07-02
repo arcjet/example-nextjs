@@ -67,46 +67,46 @@ export default function RootLayout({ children }: Props) {
                 className="dark"
               />
             </Link>
-            <div className="header__nav">
+            <div className="header-end">
               <button
-                className="nav__toggle"
+                className="hamburger-menu"
                 popoverTarget="navigation"
                 popoverTargetAction="toggle"
               >
-                <IconMenu classes={["nav__icon"]} />
-                <IconCancel classes={["nav__icon--close"]} />
+                <IconMenu classes={["hamburger-menu-menu-icon"]} />
+                <IconCancel classes={["hamburger-menu-cancel-icon"]} />
               </button>
               <nav id="navigation" popover="auto">
-                <ul className="nav__list">
+                <ul className="navigation-links">
                   <li>
-                    <a className="nav__link" href="/signup">
+                    <a className="navigation-link" href="/signup">
                       Signup form protection
                     </a>
                   </li>
                   <li>
-                    <a className="nav__link" href="/bots">
+                    <a className="navigation-link" href="/bots">
                       Bot protection
                     </a>
                   </li>
                   <li>
-                    <a className="nav__link" href="/rate-limiting">
+                    <a className="navigation-link" href="/rate-limiting">
                       Rate limiting
                     </a>
                   </li>
                   <li>
-                    <a className="nav__link" href="/attack">
+                    <a className="navigation-link" href="/attack">
                       Attack protection
                     </a>
                   </li>
                   <li>
-                    <a className="nav__link" href="/sensitive-info">
+                    <a className="navigation-link" href="/sensitive-info">
                       Sensitive info
                     </a>
                   </li>
                 </ul>
               </nav>
               <a
-                className="nav__link--icon"
+                className="navigation-icon"
                 href="https://github.com/arcjet/example-nextjs"
                 target="_blank"
                 rel="noreferrer"

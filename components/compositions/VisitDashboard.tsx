@@ -13,7 +13,7 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <div className={`section ${className || ""}`} ref={ref} {...props}>
-        <p className="typography--primary">
+        <p className="typography-primary">
           The requests will show in the Arcjet&apos;s dashboard once issued.
         </p>
         <Link

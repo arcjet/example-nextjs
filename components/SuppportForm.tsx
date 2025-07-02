@@ -48,27 +48,27 @@ export function SupportForm() {
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-      <div className="form__field">
-        <label className="form__label">
+      <div className="form-field">
+        <label className="form-label">
           Message
           <textarea
             placeholder="Please enter your message."
-            className="form__textarea"
+            className="form-textarea"
             {...form.register("supportMessage")}
           />
         </label>
         {form.formState.errors.supportMessage && (
-          <div className="form__error">
+          <div className="form-error">
             {form.formState.errors.supportMessage.message}
           </div>
         )}
         {form.formState.errors.root?.serverError && (
-          <div className="form__error">
+          <div className="form-error">
             {form.formState.errors.root.serverError.message}
           </div>
         )}
       </div>
-      <button type="submit" className="button button--primary form__button">
+      <button type="submit" className="button-primary form-button">
         Submit
       </button>
     </form>
