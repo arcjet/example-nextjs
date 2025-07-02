@@ -11,6 +11,7 @@ import LogoDark from "@/assets/logo-dark.svg";
 import "@/styles/styles.css";
 import { IconMenu } from "@/components/icons/Menu";
 import { IconCancel } from "@/components/icons/Cancel";
+import { PopoverTarget } from "@/components/PopoverTarget";
 
 export const metadata: Metadata = {
   title: {
@@ -76,7 +77,7 @@ export default function RootLayout({ children }: Props) {
                 <IconMenu classes={["hamburger-menu-menu-icon"]} />
                 <IconCancel classes={["hamburger-menu-cancel-icon"]} />
               </button>
-              <nav id="navigation" popover="auto">
+              <PopoverTarget id="navigation" closeAtWidthPx={1024}>
                 <ul className="navigation-links">
                   <li>
                     <a className="navigation-link" href="/signup">
@@ -104,7 +105,7 @@ export default function RootLayout({ children }: Props) {
                     </a>
                   </li>
                 </ul>
-              </nav>
+              </PopoverTarget>
               <a
                 className="navigation-icon"
                 href="https://github.com/arcjet/example-nextjs"
