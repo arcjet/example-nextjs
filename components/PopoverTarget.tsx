@@ -21,7 +21,6 @@ export function PopoverTarget({
     const mediaQuery = window.matchMedia(`(width >= ${closeAtWidthPx}px)`);
 
     const handler = (event: MediaQueryListEvent) => {
-      console.log("handler");
       if (event.matches) {
         popover.current?.hidePopover();
       }
