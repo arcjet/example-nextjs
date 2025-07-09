@@ -18,21 +18,27 @@ export function WhatNext({ deployed }: Props) {
             See all example apps
           </Link>
         </div>
-        <p>
-          <span className="typography-secondary">Want to know more? </span>
-          <Link href="https://docs.arcjet.com" target="_blank" className="link">
-            Arcjet docs
-          </Link>
-          <span className="typography-secondary">{" / "}</span>
-          <Link
-            href="https://arcjet.com/discord"
-            target="_blank"
-            rel="noreferrer"
-            className="link"
-          >
-            Join our Discord
-          </Link>
-        </p>
+        <div className="list-actions">
+          <p className="typography-secondary">Want to know more?</p>
+          <p>
+            <Link
+              href="https://docs.arcjet.com"
+              target="_blank"
+              className="link"
+            >
+              Arcjet docs
+            </Link>
+            <span className="typography-secondary">{" / "}</span>
+            <Link
+              href="https://arcjet.com/discord"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
+              Join our Discord
+            </Link>
+          </p>
+        </div>
       </div>
     );
   }
@@ -49,21 +55,23 @@ export function WhatNext({ deployed }: Props) {
           Sign up for Arcjet
         </Link>
       </div>
-      <p>
-        <span className="typography-secondary">Want to know more? </span>
-        <Link href="https://docs.arcjet.com" target="_blank" className="link">
-          Arcjet docs
-        </Link>
-        <span className="typography-secondary">{" / "}</span>
-        <Link
-          href="https://arcjet.com/discord"
-          target="_blank"
-          rel="noreferrer"
-          className="link"
-        >
-          Join our Discord
-        </Link>
-      </p>
+      <div className="list-actions">
+        <p className="typography-secondary">Want to know more?</p>
+        <p>
+          <Link href="https://docs.arcjet.com" target="_blank" className="link">
+            Arcjet docs
+          </Link>
+          <span className="typography-secondary">{" / "}</span>
+          <Link
+            href="https://arcjet.com/discord"
+            target="_blank"
+            rel="noreferrer"
+            className="link"
+          >
+            Join our Discord
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
