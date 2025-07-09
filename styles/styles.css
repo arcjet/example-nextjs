@@ -166,6 +166,12 @@
     gap: 16px;
   }
 
+  @media (width >= 1024px) {
+    .header-end {
+      align-items: baseline;
+    }
+  }
+
   .hamburger-menu {
     align-items: center;
     background-color: transparent;
@@ -255,6 +261,7 @@
     .navigation-links {
       flex-flow: row nowrap;
       gap: 16px;
+      align-items: baseline;
     }
   }
 
