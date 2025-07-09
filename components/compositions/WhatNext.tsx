@@ -20,7 +20,7 @@ export function WhatNext({ deployed }: Props) {
         </div>
         <div className="list-actions">
           <p className="typography-secondary">Want to know more?</p>
-          <p>
+          <div>
             <Link
               href="https://docs.arcjet.com"
               target="_blank"
@@ -37,7 +37,7 @@ export function WhatNext({ deployed }: Props) {
             >
               Join our Discord
             </Link>
-          </p>
+          </div>
         </div>
       </div>
     );
@@ -57,7 +57,7 @@ export function WhatNext({ deployed }: Props) {
       </div>
       <div className="list-actions">
         <p className="typography-secondary">Want to know more?</p>
-        <p>
+        <div>
           <Link href="https://docs.arcjet.com" target="_blank" className="link">
             Arcjet docs
           </Link>
@@ -70,7 +70,7 @@ export function WhatNext({ deployed }: Props) {
           >
             Join our Discord
           </Link>
-        </p>
+        </div>
       </div>
     </div>
   );
