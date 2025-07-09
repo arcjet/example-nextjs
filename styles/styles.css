@@ -178,6 +178,9 @@
     line-height: 1.75rem;
     padding: 0;
 
+    /* Explicit anchor-name required for polyfill */
+    anchor-name: --navigation-popover-anchor;
+
     &:hover {
       cursor: pointer;
     }
@@ -208,12 +211,12 @@
 
   /* Using an id here as the popover api requires it. */
   #navigation {
-    top: calc(anchor(bottom) + 8px);
-    right: calc(anchor(right) - 16px);
+    top: calc(anchor(--navigation-popover-anchor bottom) + 8px);
+    right: calc(anchor(--navigation-popover-anchor right) - 16px);
 
     /* necessary to override inset: 0 default styles */
     left: auto;
-    position: fixed;
+    position: absolute;
 
     background-color: var(--theme-background);
     padding: 0.6rem 1.2rem;
