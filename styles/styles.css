@@ -362,6 +362,7 @@
     display: inline-flex;
     align-items: center;
     height: 2rem;
+    width: fit-content;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: 1rem;
@@ -386,6 +387,7 @@
     display: inline-flex;
     align-items: center;
     height: 2rem;
+    width: fit-content;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: 1rem;
