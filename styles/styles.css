@@ -123,7 +123,8 @@
 
   code {
     padding: calc(8px * 0.2) calc(8px * 0.75);
-    background-color: light-dark(var(--theme-background), var(--theme-surface));
+    background-color: var(--theme-background);
+    color: var(--theme-foreground);
     border: 1px solid var(--theme-border);
     border-radius: 0.25rem;
     font-family: var(--theme-font-mono);
@@ -469,7 +470,8 @@
   }
 
   .codeblock {
-    background-color: light-dark(var(--theme-background), var(--theme-surface));
+    background-color: var(--theme-background);
+    color: var(--theme-foreground);
     border: 1px solid var(--theme-border);
     border-radius: 0.5rem;
     font-family: var(--theme-font-mono);
