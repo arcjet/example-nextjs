@@ -112,6 +112,9 @@
 
     /* TODO: Use as the override (looks like we'll need javascript to toggle an attribute in 2025...) */
     /* color-scheme: dark; */
+
+    /* TODO: Define a spacing unit and use it consistently, e.g. border radius, padding, margin, ... */
+    /* --sp: 8px; */
   }
 
   * {
