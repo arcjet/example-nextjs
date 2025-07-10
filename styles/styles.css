@@ -29,6 +29,12 @@
   initial-value: #232129;
 }
 
+@property --palette-neutral-03 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2f2c36;
+}
+
 @property --palette-neutral-05 {
   syntax: "<color>";
   inherits: false;
@@ -97,7 +103,11 @@
     );
 
     /* Interactive elements */
-    --theme-border: light-dark(
+    --theme-border-level1: light-dark(
+      var(--palette-neutral-12),
+      var(--palette-neutral-03)
+    );
+    --theme-border-level2: light-dark(
       var(--palette-neutral-10),
       var(--palette-neutral-05)
     );
@@ -128,7 +138,7 @@
     padding: calc(8px * 0.2) calc(8px * 0.75);
     background-color: var(--theme-background);
     color: var(--theme-foreground);
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--theme-border-level1);
     border-radius: 0.25rem;
     font-family: var(--theme-font-mono);
     font-size: 0.875em;
@@ -228,7 +238,8 @@
     background-color: var(--theme-background);
     padding: 0.6rem 1.2rem;
     border-radius: 1em;
-    border: 1px solid oklch(from var(--theme-border) l c h / calc(alpha - 0.4));
+    border: 1px solid
+      oklch(from var(--theme-border-level2) l c h / calc(alpha - 0.4));
 
     &:popover-open {
       display: flex;
@@ -316,7 +327,7 @@
   .divider {
     height: 1px;
     width: 100%;
-    background-color: var(--theme-border);
+    background-color: var(--theme-border-level2);
     opacity: 0.6;
     border: 0;
   }
@@ -479,11 +490,11 @@
   .codeblock {
     background-color: var(--theme-background);
     color: var(--theme-foreground);
-    border: 1px solid var(--theme-border);
-    border-radius: 0.5rem;
+    border: 1px solid var(--theme-border-level1);
+    border-radius: calc(8px * 0.5);
     font-family: var(--theme-font-mono);
-    font-size: 0.75rem;
-    padding: calc(8px * 1.5);
+    font-size: 0.9375rem;
+    padding: calc(8px * 0.75) calc(8px * 1.25);
     line-height: 1.25rem;
     overflow-x: auto;
     white-space: pre;
@@ -522,7 +533,7 @@
 
     color: var(--theme-text-primary);
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.25rem;
     margin-bottom: 0.25rem;
   }
@@ -531,10 +542,12 @@
     padding: 0.5rem;
     border: 1px solid var(--theme-input);
     border-radius: 0.5rem;
+    padding: calc(8px * 0.625) calc(8px * 1.25);
     background-color: var(--theme-background);
     color: var(--theme-text-primary);
     font-family: inherit;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
     line-height: 1.25rem;
     width: 100%;
     box-sizing: border-box;
@@ -553,9 +566,10 @@
     padding: 0.5rem;
     border: 1px solid var(--theme-input);
     border-radius: 0.5rem;
+    padding: calc(8px * 0.625) calc(8px * 1.25);
     background-color: var(--theme-background);
     color: var(--theme-text-primary);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     line-height: 1.25rem;
     width: 100%;
     min-height: 6rem;
@@ -591,7 +605,7 @@
     line-height: 1.25rem;
     padding: 0.75rem;
     background-color: var(--theme-surface);
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--theme-border-level1);
     border-radius: 0.5rem;
   }
 
@@ -602,7 +616,7 @@
     line-height: 1.25rem;
     padding: 0.75rem;
     background-color: var(--theme-surface);
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--theme-border-level1);
     border-radius: 0.5rem;
   }
 }
