@@ -71,8 +71,8 @@
 
     /* Typography */
     --theme-font-mono:
-      ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
-      "Liberation Mono", "Courier New", monospace;
+      "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
     --theme-font-sans:
       "Figtree Variable", "Figtree", "Figtree Fallback", ui-sans-serif,
       system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
