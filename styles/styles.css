@@ -35,6 +35,12 @@
   initial-value: #2f2c36;
 }
 
+@property --palette-neutral-04 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3d3a45;
+}
+
 @property --palette-neutral-05 {
   syntax: "<color>";
   inherits: false;
@@ -57,6 +63,12 @@
   syntax: "<color>";
   inherits: false;
   initial-value: #aca6b5;
+}
+
+@property --palette-neutral-11 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #bfb9c8;
 }
 
 @property --palette-neutral-12 {
@@ -94,8 +106,8 @@
       var(--palette-white)
     );
     --theme-text-secondary: light-dark(
-      var(--palette-neutral-05),
-      var(--palette-neutral-12)
+      var(--palette-neutral-04),
+      var(--palette-neutral-11)
     );
     --theme-text-muted: light-dark(
       var(--palette-neutral-07),
