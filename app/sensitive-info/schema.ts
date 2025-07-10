@@ -13,5 +13,3 @@ export const formSchema = z.object({
         "Your message is too long. Please shorten it to 1000 characters.",
     }),
 });
-
-export const emptyFormSchema = z.object({});
