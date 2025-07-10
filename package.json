@@ -31,10 +31,10 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@arcjet/decorate": "1.0.0-beta.8",
-    "@arcjet/env": "1.0.0-beta.8",
-    "@arcjet/ip": "1.0.0-beta.8",
-    "@arcjet/next": "1.0.0-beta.8",
+    "@arcjet/decorate": "1.0.0-beta.9",
+    "@arcjet/env": "1.0.0-beta.9",
+    "@arcjet/ip": "1.0.0-beta.9",
+    "@arcjet/next": "1.0.0-beta.9",
     "@fontsource-variable/figtree": "5.2.8",
     "@fontsource/ibm-plex-mono": "5.2.6",
     "@hookform/resolvers": "5.1.1",
