@@ -164,6 +164,9 @@
     flex-shrink: 0;
     flex-wrap: nowrap;
     gap: 16px;
+
+    /* Manually align to logo baseline */
+    margin-top: 0.25em;
   }
 
   .hamburger-menu {
