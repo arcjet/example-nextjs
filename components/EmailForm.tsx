@@ -1,10 +1,10 @@
 "use client";
 
-import { formSchema } from "@/app/signup/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { formSchema } from "@/app/signup/schema";
 
 export function EmailForm() {
   // Allows us to set an error message on the form.

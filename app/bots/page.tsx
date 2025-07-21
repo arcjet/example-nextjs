@@ -1,8 +1,8 @@
-import VisitDashboard from "@/components/compositions/VisitDashboard";
-import { WhatNext } from "@/components/compositions/WhatNext";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
+import VisitDashboard from "@/components/compositions/VisitDashboard";
+import { WhatNext } from "@/components/compositions/WhatNext";
 
 export const metadata: Metadata = {
   title: "Bot protection example",

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 // @ts-ignore build manifest may or may not exist
 import appPathManifest from "../.next/app-path-routes-manifest.json";

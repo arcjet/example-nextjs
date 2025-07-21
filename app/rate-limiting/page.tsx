@@ -1,10 +1,10 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { WhatNext } from "@/components/compositions/WhatNext";
 import { RLForm } from "@/components/RLForm";
 import { SignIn } from "@/components/SignIn";
 import { SignOut } from "@/components/SignOut";
-import { WhatNext } from "@/components/compositions/WhatNext";
 import { auth } from "@/lib/auth";
-import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Rate limiting example",

@@ -131,12 +131,6 @@
       var(--palette-neutral-12),
       var(--palette-neutral-02)
     );
-
-    /* TODO: Use as the override (looks like we'll need javascript to toggle an attribute in 2025...) */
-    /* color-scheme: dark; */
-
-    /* TODO: Define a spacing unit and use it consistently, e.g. border radius, padding, margin, ... */
-    /* --sp: 8px; */
   }
 
   * {
@@ -194,6 +188,10 @@
     margin-top: 0.25em;
   }
 
+  .hamburger-menu-cancel-icon {
+    display: none;
+  }
+
   .hamburger-menu {
     align-items: center;
     background-color: transparent;
@@ -232,10 +230,6 @@
     .hamburger-menu {
       display: none;
     }
-  }
-
-  .hamburger-menu-cancel-icon {
-    display: none;
   }
 
   /* Using an id here as the popover api requires it. */
@@ -512,8 +506,8 @@
     white-space: pre;
 
     /**
-     * Hack to avoid adding overflow-* to parent elements.
-     */
+		 * Hack to avoid adding overflow-* to parent elements.
+		 */
     max-width: 80vw;
   }
 
@@ -551,7 +545,6 @@
   }
 
   .form-input {
-    padding: 0.5rem;
     border: 1px solid var(--theme-input);
     border-radius: 0.5rem;
     padding: calc(8px * 0.625) calc(8px * 1.25);
@@ -575,7 +568,6 @@
   }
 
   .form-textarea {
-    padding: 0.5rem;
     border: 1px solid var(--theme-input);
     border-radius: 0.5rem;
     padding: calc(8px * 0.625) calc(8px * 1.25);

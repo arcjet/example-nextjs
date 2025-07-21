@@ -1,10 +1,10 @@
 "use client";
 
-import { formSchema } from "@/app/sensitive-info/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { formSchema } from "@/app/sensitive-info/schema";
 
 export function SupportForm() {
   // Used to navigate to the welcome page after a successful form submission.

@@ -1,10 +1,10 @@
 "use client";
 
-import { emptyFormSchema } from "@/app/signup/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { emptyFormSchema } from "@/app/signup/schema";
 
 export function RLForm() {
   // Use state to persist latest error message even across form submissions.

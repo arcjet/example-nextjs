@@ -1,8 +1,8 @@
-import { formSchema } from "@/app/sensitive-info/schema";
-import arcjet, { sensitiveInfo, shield } from "@/lib/arcjet";
 import { isDevelopment } from "@arcjet/env";
 import ip from "@arcjet/ip";
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
+import { formSchema } from "@/app/sensitive-info/schema";
+import arcjet, { sensitiveInfo, shield } from "@/lib/arcjet";
 
 // Add rules to the base Arcjet instance outside of the handler function
 const aj = arcjet
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
     }
   } else if (decision.isErrored()) {
     console.error("Arcjet error:", decision.reason);
-    if (decision.reason.message == "[unauthenticated] invalid key") {
+    if (decision.reason.message === "[unauthenticated] invalid key") {
       return NextResponse.json(
         {
           message:
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
       );
     } else {
       return NextResponse.json(
-        { message: "Internal server error: " + decision.reason.message },
+        { message: `Internal server error: ${decision.reason.message}` },
         { status: 500 },
       );
     }

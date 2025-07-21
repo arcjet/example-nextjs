@@ -1,8 +1,8 @@
+import { isDevelopment } from "@arcjet/env";
+import ip from "@arcjet/ip";
+import { NextRequest, NextResponse } from "next/server";
 import { formSchema } from "@/app/signup/schema";
 import arcjet, { protectSignup, shield } from "@/lib/arcjet";
-import { NextRequest, NextResponse } from "next/server";
-import ip from "@arcjet/ip";
-import { isDevelopment } from "@arcjet/env";
 
 // Add rules to the base Arcjet instance outside of the handler function
 const aj = arcjet

@@ -1,5 +1,5 @@
-import * as nosecone from "@nosecone/next";
 import { isDevelopment } from "@arcjet/env";
+import * as nosecone from "@nosecone/next";
 
 const noseconeConfig: nosecone.NoseconeOptions = {
   ...nosecone.defaults,

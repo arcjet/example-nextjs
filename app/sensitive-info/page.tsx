@@ -1,8 +1,8 @@
-import { SupportForm } from "@/components/SuppportForm";
-import VisitDashboard from "@/components/compositions/VisitDashboard";
-import { WhatNext } from "@/components/compositions/WhatNext";
 import type { Metadata } from "next";
 import Link from "next/link";
+import VisitDashboard from "@/components/compositions/VisitDashboard";
+import { WhatNext } from "@/components/compositions/WhatNext";
+import { SupportForm } from "@/components/SuppportForm";
 
 export const metadata: Metadata = {
   title: "Sensitive info detection example",

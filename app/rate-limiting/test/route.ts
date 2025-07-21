@@ -1,10 +1,10 @@
-import arcjet, { fixedWindow, shield } from "@/lib/arcjet";
-import { auth } from "@/lib/auth";
 import { setRateLimitHeaders } from "@arcjet/decorate";
 import { isDevelopment } from "@arcjet/env";
 import ip from "@arcjet/ip";
+import { type NextRequest, NextResponse } from "next/server";
 import type { Session } from "next-auth";
-import { NextRequest, NextResponse } from "next/server";
+import arcjet, { fixedWindow, shield } from "@/lib/arcjet";
+import { auth } from "@/lib/auth";
 
 // Opt out of caching
 export const dynamic = "force-dynamic";
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
   } else if (decision.isErrored()) {
     console.error("Arcjet error:", decision.reason);
 
-    if (decision.reason.message == "[unauthenticated] invalid key") {
+    if (decision.reason.message === "[unauthenticated] invalid key") {
       return NextResponse.json(
         {
           message:
@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
       );
     } else {
       return NextResponse.json(
-        { message: "Internal server error: " + decision.reason.message },
+        { message: `Internal server error: ${decision.reason.message}` },
         { status: 500 },
       );
     }

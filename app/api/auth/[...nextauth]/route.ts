@@ -1,9 +1,10 @@
 // This is Auth.js 5, the successor to NextAuth 4
+
+import { isDevelopment } from "@arcjet/env";
+import ip from "@arcjet/ip";
+import { NextRequest, NextResponse } from "next/server";
 import arcjet, { detectBot, shield, slidingWindow } from "@/lib/arcjet";
 import { handlers } from "@/lib/auth";
-import ip from "@arcjet/ip";
-import { isDevelopment } from "@arcjet/env";
-import { NextRequest, NextResponse } from "next/server";
 
 // Add rules to the base Arcjet instance outside of the handler function
 const aj = arcjet
