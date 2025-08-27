@@ -23,9 +23,6 @@ export default arcjet({
   // and set it as an environment variable rather than hard coding.
   // See: https://nextjs.org/docs/app/building-your-application/configuring/environment-variables
   key: process.env.ARCJET_KEY,
-  // We specify a custom fingerprint so we can dynamically build it within each
-  // demo route.
-  characteristics: ["fingerprint"],
   rules: [
     // You can include one or more rules base rules. We don't include any here
     // so they can be set on each sub-page for the demo.

@@ -1,8 +1,6 @@
 import { setRateLimitHeaders } from "@arcjet/decorate";
-import { isDevelopment } from "@arcjet/env";
-import ip from "@arcjet/ip";
+import type { ArcjetDecision } from "@arcjet/next";
 import { type NextRequest, NextResponse } from "next/server";
-import type { Session } from "next-auth";
 import arcjet, { fixedWindow, shield } from "@/lib/arcjet";
 import { auth } from "@/lib/auth";
 
@@ -18,27 +16,27 @@ const aj = arcjet.withRule(
   }),
 );
 
-// Returns ad-hoc rules depending on whether the session is present. You could
-// inspect more details about the session to dynamically adjust the rate limit.
-function getClient(session: Session | null) {
-  if (session?.user) {
-    return aj.withRule(
-      fixedWindow({
-        mode: "LIVE",
-        max: 5,
-        window: "60s",
-      }),
-    );
-  } else {
-    return aj.withRule(
-      fixedWindow({
-        mode: "LIVE",
-        max: 2,
-        window: "60s",
-      }),
-    );
-  }
-}
+// Define an augmented client for rate limiting users
+const ajForUser = aj.withRule(
+  fixedWindow({
+    // fingerprint requests by user ID
+    characteristics: ["userId"],
+    mode: "LIVE",
+    max: 5,
+    window: "60s",
+  }),
+);
+
+// Define an augmented client for rate limiting guests
+const ajForGuest = aj.withRule(
+  fixedWindow({
+    // fingerprint requests by ip address (default unless set globally)
+    characteristics: ["ip.src"],
+    mode: "LIVE",
+    max: 2,
+    window: "60s",
+  }),
+);
 
 export async function POST(req: NextRequest) {
   // Get the session
@@ -46,19 +44,14 @@ export async function POST(req: NextRequest) {
 
   console.log("Session: ", session);
 
-  // Next.js 15 doesn't provide the IP address in the request object so we use
-  // the Arcjet utility package to parse the headers and find it. If we're
-  // running in development mode, we'll use a local IP address.
-  const userIp = isDevelopment(process.env) ? "127.0.0.1" : ip(req);
+  let decision: ArcjetDecision;
 
   // Use the user ID if the user is logged in, otherwise use the IP address
-  const fingerprint = session?.user?.id ?? userIp;
-
-  // The protect method returns a decision object that contains information
-  // about the request.
-  const decision = await getClient(session).protect(req, {
-    fingerprint,
-  });
+  if (session?.user?.id) {
+    decision = await ajForUser.protect(req, { userId: session.user.id });
+  } else {
+    decision = await ajForGuest.protect(req);
+  }
 
   console.log("Arcjet decision: ", decision);
 

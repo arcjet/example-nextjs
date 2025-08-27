@@ -1,5 +1,3 @@
-import { isDevelopment } from "@arcjet/env";
-import ip from "@arcjet/ip";
 import { type NextRequest, NextResponse } from "next/server";
 import arcjet, { shield } from "@/lib/arcjet";
 
@@ -16,13 +14,9 @@ const aj = arcjet.withRule(
 );
 
 export async function GET(req: NextRequest) {
-  // Next.js 15 doesn't provide the IP address in the request object so we use
-  // the Arcjet utility package to parse the headers and find it. If we're
-  // running in development mode, we'll use a local IP address.
-  const userIp = isDevelopment(process.env) ? "127.0.0.1" : ip(req);
   // The protect method returns a decision object that contains information
   // about the request.
-  const decision = await aj.protect(req, { fingerprint: userIp });
+  const decision = await aj.protect(req);
 
   console.log("Arcjet decision: ", decision);
 
