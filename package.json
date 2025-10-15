@@ -27,16 +27,16 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@arcjet/decorate": "1.0.0-beta.12",
-    "@arcjet/env": "1.0.0-beta.12",
-    "@arcjet/ip": "1.0.0-beta.12",
-    "@arcjet/next": "1.0.0-beta.12",
-    "@fontsource-variable/figtree": "5.2.8",
+    "@arcjet/decorate": "1.0.0-beta.13",
+    "@arcjet/env": "1.0.0-beta.13",
+    "@arcjet/ip": "1.0.0-beta.13",
+    "@arcjet/next": "1.0.0-beta.13",
+    "@fontsource-variable/figtree": "5.2.9",
     "@fontsource/ibm-plex-mono": "5.2.6",
-    "@hookform/resolvers": "5.2.1",
-    "@nosecone/next": "1.0.0-beta.12",
+    "@hookform/resolvers": "5.2.2",
+    "@nosecone/next": "1.0.0-beta.13",
     "@oddbird/css-anchor-positioning": "0.6.1",
-    "next": "15.5.2",
+    "next": "15.5.3",
     "next-auth": "5.0.0-beta.29",
     "next-themes": "0.4.6",
     "react": "19.1.1",
@@ -46,10 +46,10 @@
   },
   "devDependencies": {
     "@playwright/test": "1.55.0",
-    "@types/node": "22.18.0",
-    "@types/react": "19.1.12",
+    "@types/node": "22.18.3",
+    "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
-    "sass": "1.91.0",
+    "sass": "1.92.1",
     "typescript": "5.9.2"
   }
 }
