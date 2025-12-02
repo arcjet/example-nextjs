@@ -1,57 +1,31 @@
 import { setRateLimitHeaders } from "@arcjet/decorate";
-import type { ArcjetDecision } from "@arcjet/next";
 import { type NextRequest, NextResponse } from "next/server";
 import arcjet, { fixedWindow, shield } from "@/lib/arcjet";
-import { auth } from "@/lib/auth";
 
 // Opt out of caching
 export const dynamic = "force-dynamic";
 
 // Add rules to the base Arcjet instance outside of the handler function
-const aj = arcjet.withRule(
-  // Shield detects suspicious behavior, such as SQL injection and cross-site
-  // scripting attacks. We want to ru nit on every request
-  shield({
-    mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
-  }),
-);
-
-// Define an augmented client for rate limiting users
-const ajForUser = aj.withRule(
-  fixedWindow({
-    // fingerprint requests by user ID
-    characteristics: ["userId"],
-    mode: "LIVE",
-    max: 5,
-    window: "60s",
-  }),
-);
-
-// Define an augmented client for rate limiting guests
-const ajForGuest = aj.withRule(
-  fixedWindow({
-    // fingerprint requests by ip address (default unless set globally)
-    characteristics: ["ip.src"],
-    mode: "LIVE",
-    max: 2,
-    window: "60s",
-  }),
-);
+const aj = arcjet
+  .withRule(
+    // Shield detects suspicious behavior, such as SQL injection and cross-site
+    // scripting attacks. We want to ru nit on every request
+    shield({
+      mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
+    }),
+  )
+  .withRule(
+    fixedWindow({
+      // fingerprint requests by ip address (default unless set globally)
+      characteristics: ["ip.src"],
+      mode: "LIVE",
+      max: 2,
+      window: "60s",
+    }),
+  );
 
 export async function POST(req: NextRequest) {
-  // Get the session
-  const session = await auth();
-
-  console.log("Session: ", session);
-
-  let decision: ArcjetDecision;
-
-  // Use the user ID if the user is logged in, otherwise use the IP address
-  if (session?.user?.id) {
-    decision = await ajForUser.protect(req, { userId: session.user.id });
-  } else {
-    decision = await ajForGuest.protect(req);
-  }
+  const decision = await aj.protect(req);
 
   console.log("Arcjet decision: ", decision);
 

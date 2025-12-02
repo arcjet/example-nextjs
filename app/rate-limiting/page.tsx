@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { WhatNext } from "@/components/compositions/WhatNext";
 import { RLForm } from "@/components/RLForm";
-import { SignIn } from "@/components/SignIn";
-import { SignOut } from "@/components/SignOut";
-import { auth } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "Rate limiting example",
@@ -12,8 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default async function IndexPage() {
-  const session = await auth();
-
   return (
     <main className="page">
       <div className="section">
@@ -36,28 +31,7 @@ export default async function IndexPage() {
         <h2 className="heading-secondary">Try it</h2>
         <RLForm />
 
-        {session?.user ? (
-          <>
-            <p className="typography--description">
-              You are authenticated as {session.user?.email}
-              <span className="typography--subtitle">
-                {" "}
-                – the limit is set to 5 requests every 60 seconds.
-              </span>
-            </p>
-          </>
-        ) : (
-          <>
-            <p className="typography--description">
-              You are not authenticated
-              <span className="typography--subtitle">
-                {" "}
-                – the limit is set to 2 requests every 60 seconds.
-              </span>
-            </p>
-          </>
-        )}
-
+        <p>The limit is set to 2 requests every 60 seconds.</p>
         <p className="typography--subtitle">
           Rate limits can be{" "}
           <Link
@@ -68,8 +42,6 @@ export default async function IndexPage() {
           </Link>{" "}
           e.g. to set a limit based on the authenticated user.
         </p>
-
-        {session?.user ? <SignOut /> : <SignIn />}
       </div>
 
       <hr className="divider" />

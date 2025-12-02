@@ -48,10 +48,7 @@ features. It is deployed at
 npm ci
 ```
 
-3. Rename `.env.local.example` to `.env.local` and add your Arcjet key. If you
-   want to test the rate limiting authentication, you will also need to add an
-   Auth.js secret and [create a GitHub OAuth
-   app](https://authjs.dev/guides/configuring-github).
+3. Rename `.env.local.example` to `.env.local` and add your Arcjet key
 
 4. Start the dev server
 
@@ -69,7 +66,6 @@ server](https://arcjet.com/discord).
 
 ## Stack
 
-- Auth: [Auth.js](https://authjs.dev/)
 - App: [Next.js](https://nextjs.org/)
 - Form handling: [React Hook Form](https://react-hook-form.com/) (see also [our
   full form protection
