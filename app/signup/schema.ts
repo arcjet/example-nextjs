@@ -5,7 +5,7 @@ import { z } from "zod";
 // Client-side validation improves the UX by providing immediate feedback
 // whereas server-side validation is necessary for security.
 export const formSchema = z.object({
-  email: z.string().email({
+  email: z.email({
     message: "Please enter a valid email address.",
   }),
 });

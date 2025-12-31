@@ -1,7 +1,7 @@
 import { isDevelopment } from "@arcjet/env";
 import * as nosecone from "@nosecone/next";
 
-const noseconeConfig: nosecone.NoseconeOptions = {
+const noseconeConfig: nosecone.Options = {
   ...nosecone.defaults,
   contentSecurityPolicy: {
     ...nosecone.defaults.contentSecurityPolicy,
@@ -37,10 +37,8 @@ const noseconeConfig: nosecone.NoseconeOptions = {
   },
 } as const;
 
-const noseconeMiddleware = nosecone.createMiddleware(
+export const proxy = nosecone.createMiddleware(
   process.env.VERCEL_ENV === "preview"
     ? nosecone.withVercelToolbar(noseconeConfig)
     : noseconeConfig,
 );
-
-export default noseconeMiddleware;
