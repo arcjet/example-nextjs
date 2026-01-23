@@ -27,21 +27,21 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@arcjet/decorate": "1.0.0-beta.17",
-    "@arcjet/env": "1.0.0-beta.17",
-    "@arcjet/ip": "1.0.0-beta.17",
-    "@arcjet/next": "1.0.0-beta.17",
+    "@arcjet/decorate": "1.0.0",
+    "@arcjet/env": "1.0.0",
+    "@arcjet/ip": "1.0.0",
+    "@arcjet/next": "1.0.0",
     "@fontsource-variable/figtree": "5.2.10",
     "@fontsource/ibm-plex-mono": "5.2.7",
     "@hookform/resolvers": "5.2.2",
-    "@nosecone/next": "1.0.0-beta.17",
+    "@nosecone/next": "1.0.0",
     "@oddbird/css-anchor-positioning": "0.8.0",
     "next": "16.1.1",
     "next-themes": "0.4.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-hook-form": "7.68.0",
-    "zod": "4.1.13"
+    "react-hook-form": "7.69.0",
+    "zod": "4.2.1"
   },
   "devDependencies": {
     "@playwright/test": "1.57.0",

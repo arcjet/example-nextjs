@@ -24,9 +24,24 @@ const aj = arcjet
   );
 
 export async function POST(req: NextRequest) {
+  const json = await req.json();
+  const data = formSchema.safeParse(json);
+
+  if (!data.success) {
+    const { error } = data;
+
+    return NextResponse.json(
+      { message: "invalid request", error },
+      { status: 400 },
+    );
+  }
+
   // The protect method returns a decision object that contains information
   // about the request.
-  const decision = await aj.protect(req);
+  const decision = await aj.protect(req, {
+    // Pass the message to be evaluated for sensitive info (locally)
+    sensitiveInfoValue: data.data.supportMessage,
+  });
 
   console.log("Arcjet decision: ", decision);
 
@@ -58,18 +73,6 @@ export async function POST(req: NextRequest) {
         { status: 500 },
       );
     }
-  }
-
-  const json = await req.json();
-  const data = formSchema.safeParse(json);
-
-  if (!data.success) {
-    const { error } = data;
-
-    return NextResponse.json(
-      { message: "invalid request", error },
-      { status: 400 },
-    );
   }
 
   return NextResponse.json({
