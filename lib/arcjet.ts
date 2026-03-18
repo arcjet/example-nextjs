@@ -1,5 +1,6 @@
 import arcjet, {
   detectBot,
+  detectPromptInjection,
   fixedWindow,
   protectSignup,
   sensitiveInfo,
@@ -10,6 +11,7 @@ import arcjet, {
 // Re-export the rules to simplify imports inside handlers
 export {
   detectBot,
+  detectPromptInjection,
   fixedWindow,
   protectSignup,
   sensitiveInfo,

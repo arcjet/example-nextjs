@@ -37,6 +37,9 @@ features. It is deployed at
 - [Sensitive info](https://example.arcjet.com/sensitive-info) protects against
   clients sending you sensitive information such as PII that you do not wish to
   handle.
+- [Prompt injection detection](https://example.arcjet.com/prompt-injection)
+  analyzes user prompts for injection attacks such as jailbreaks, role-play
+  escapes, or instruction overrides.
 
 ## Run locally
 

@@ -48,6 +48,9 @@ export default function IndexPage() {
           <Link href="/sensitive-info" className="button-primary">
             Sensitive info
           </Link>
+          <Link href="/prompt-injection" className="button-primary">
+            Prompt injection
+          </Link>
         </div>
       </div>
 

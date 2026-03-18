@@ -103,6 +103,14 @@ export default function RootLayout({ children }: Props) {
                     Sensitive info
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    className="navigation-link"
+                    href="/prompt-injection"
+                  >
+                    Prompt injection
+                  </NavLink>
+                </li>
               </ul>
             </PopoverTarget>
             <a

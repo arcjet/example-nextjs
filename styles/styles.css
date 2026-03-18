@@ -526,6 +526,10 @@
     max-width: 320px;
   }
 
+  .form--wide {
+    max-width: 540px;
+  }
+
   .form-field {
     display: flex;
     flex-direction: column;
@@ -576,7 +580,7 @@
     font-size: 0.9375rem;
     line-height: 1.25rem;
     width: 100%;
-    min-height: 6rem;
+    min-height: 12rem;
     resize: vertical;
     box-sizing: border-box;
 

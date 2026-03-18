@@ -35,5 +35,10 @@ export const siteConfig = {
       href: "/sensitive-info",
       key: "sensitive-info",
     },
+    {
+      title: "Prompt injection",
+      href: "/prompt-injection",
+      key: "prompt-injection",
+    },
   ],
 };
