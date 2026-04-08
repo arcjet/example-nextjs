@@ -205,7 +205,6 @@
     line-height: 1.75rem;
     padding: 0;
 
-    /* Explicit anchor-name required for polyfill */
     anchor-name: --navigation-popover-anchor;
 
     &:hover {
