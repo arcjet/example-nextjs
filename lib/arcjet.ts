@@ -6,6 +6,7 @@ import arcjet, {
   sensitiveInfo,
   shield,
   slidingWindow,
+  tokenBucket,
 } from "@arcjet/next";
 
 // Re-export the rules to simplify imports inside handlers
@@ -17,6 +18,7 @@ export {
   sensitiveInfo,
   shield,
   slidingWindow,
+  tokenBucket,
 };
 
 // Create a base Arcjet instance for use by each handler

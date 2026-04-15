@@ -3,5 +3,6 @@ declare namespace NodeJS {
     readonly ARCJET_KEY: string;
     readonly AUTH_SECRET: string;
     readonly ARCJET_ENV?: string;
+    readonly OPENAI_API_KEY?: string;
   }
 }
