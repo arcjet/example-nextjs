@@ -15,7 +15,7 @@
   },
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "next dev",
@@ -27,28 +27,28 @@
     "test:run": "playwright test"
   },
   "dependencies": {
-    "@ai-sdk/openai": "3.0.53",
-    "@ai-sdk/react": "3.0.170",
-    "@arcjet/decorate": "1.4.0",
-    "@arcjet/env": "1.4.0",
-    "@arcjet/ip": "1.4.0",
-    "@arcjet/next": "1.4.0",
+    "@ai-sdk/openai": "3.0.65",
+    "@ai-sdk/react": "3.0.193",
+    "@arcjet/decorate": "1.6.1",
+    "@arcjet/env": "1.6.1",
+    "@arcjet/ip": "1.6.1",
+    "@arcjet/next": "1.6.1",
     "@fontsource-variable/figtree": "5.2.10",
     "@fontsource/ibm-plex-mono": "5.2.7",
-    "@hookform/resolvers": "5.2.2",
-    "@nosecone/next": "1.4.0",
-    "ai": "6.0.168",
+    "@hookform/resolvers": "5.4.0",
+    "@nosecone/next": "1.6.1",
+    "ai": "6.0.191",
     "next": "16.2.6",
     "next-themes": "0.4.6",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
-    "react-hook-form": "7.72.1",
-    "zod": "4.3.6"
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-hook-form": "7.76.1",
+    "zod": "4.4.3"
   },
   "devDependencies": {
-    "@playwright/test": "1.59.1",
-    "@types/node": "22.19.17",
-    "@types/react": "19.2.14",
+    "@playwright/test": "1.60.0",
+    "@types/node": "22.20.0",
+    "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
     "typescript": "5.9.3"
   },
