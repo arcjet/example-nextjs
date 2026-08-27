@@ -17,7 +17,7 @@ const VisitDashboard = React.forwardRef<HTMLDivElement, Props>(
           The requests will show in the Arcjet&apos;s dashboard once issued.
         </p>
         <Link
-          href={`https://app.arcjet.com/sites/${siteKey}`}
+          href={`https://console.arcjet.com/sites/${siteKey}`}
           target="arcjet-app"
           className="link"
           style={{

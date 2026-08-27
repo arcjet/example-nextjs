@@ -48,7 +48,7 @@ export function WhatNext({ deployed }: Props) {
       <h2 className="heading-secondary">What next?</h2>
       <div className="list-actions">
         <Link
-          href="https://app.arcjet.com"
+          href="https://console.arcjet.com"
           target="_blank"
           className="button-secondary"
         >
